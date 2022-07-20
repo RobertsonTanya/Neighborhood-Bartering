@@ -1,0 +1,10 @@
+.App {
+  background-image:url('../images/Background\ Green.png'), url('../images/Background.png');
+  background-position: top center, bottom center;
+  background-size: cover, cover;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 20px auto;
+}
