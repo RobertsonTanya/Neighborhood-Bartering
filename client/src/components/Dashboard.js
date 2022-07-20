@@ -5,11 +5,13 @@ import styles from '../styles/dashboard.module.css';
 
 function Dashboard() {
   return (
-    <div>
+    <div className={`container ${styles.container}`}>
+
       <h1>GrocerySwap</h1>
-    <div className={styles.dashboard}>
-    <Post /><Post /><Post />
-    </div>
+      <div className={styles.dashboard}>
+        <Post /><Post /><Post />
+        <Post /><Post /><Post />
+      </div>
     </div>
   )
 }
