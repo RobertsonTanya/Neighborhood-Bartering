@@ -76,5 +76,19 @@ module.exports = {
             res.json({
                 message: 'You have successfully logged out.'
             })
+        },
+        getLoggedInUser: (req, res)=>{
+            const decodedJWT = jwt.decode(req.cookies.usertoken, {
+                complete: true
+            })
+
+            User.findOne({_id: decodedJWT.payload.id})
+                .then((user)=>{
+                    console.log(user);
+                    res.json(user);
+                })
+                .catch((err)=>{
+                    console.log(err);
+                })
         }
 }
