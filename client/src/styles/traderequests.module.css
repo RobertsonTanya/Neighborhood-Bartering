@@ -10,11 +10,17 @@
 }
 
 .request{
-  margin: 100px;
+  margin: 20px;
 }
 
 .buttons {
-  margin-left: 60px;
+  justify-content: center;
+  height: 50px;
+  display: flex;
+}
+
+.buttons button {
+  margin: 0 10px;
 }
 
 .img {

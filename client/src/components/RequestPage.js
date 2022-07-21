@@ -5,7 +5,7 @@ import logo from '../images/logo.png'
 
 function Requests() {
   return (
-    <div>
+    <div className='container'>
       <img className={styles.logo} src={logo} alt="logo" />
     <div className={styles.requestpage}>
       <TradeRequest /><TradeRequest /><TradeRequest />
