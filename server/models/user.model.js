@@ -30,5 +30,13 @@ UserSchema.pre('validate', function(next){
 })
 UserSchema.pre("save", function(next){
     console.log('in pre save');
-    bcrypt.hash//////stopped here    35 min 17 sec
+    bcrypt.hash(this.password, 10)
+        .then((hashedPassword)=>{
+            this.password = hashedPassword;
+            next();
+        })
 });
+
+const User = mongoose.model("User", UserSchema);
+
+module.exports = User;
