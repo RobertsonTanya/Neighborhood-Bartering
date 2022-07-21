@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-const dbName = "GrocerySwap";
+const dbName = process.env.DB_NAME;
 
 mongoose
   .connect(`mongodb://127.0.0.1/${dbName}`, {
