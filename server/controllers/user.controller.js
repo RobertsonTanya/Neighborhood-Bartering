@@ -90,5 +90,5 @@ module.exports = {
                 .catch((err)=>{
                     console.log(err);
                 })
-        }// Break -- start video at 1:22:56
+        }
 }
