@@ -12,6 +12,7 @@ const CreateItemForm = () => {
   // const [createdBy, setCreatedBy] = useState("");
   // const [date, setDate] = useState(""); >> update model with "date: type" with date validators
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -33,7 +34,7 @@ const CreateItemForm = () => {
           imgUrl,
           altTrade,
           altMessage,
-        }
+        },
         // {
         //   withCredentials: true,
         // }
