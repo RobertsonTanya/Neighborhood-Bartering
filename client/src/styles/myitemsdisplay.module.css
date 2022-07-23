@@ -1,10 +1,10 @@
-.table-Container {
+.tableContainer {
   display: flex;
   margin:0px;
   padding: 0px;
 }
 
-.table-header {
+.tableHeader {
   list-style-type: none;
   display: flex;
   width: fit-content;
