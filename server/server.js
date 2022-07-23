@@ -7,7 +7,10 @@ const app = express();
 const port = process.env.MY_PORT;
 
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+    origin: `http://localhost:${port}`,
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

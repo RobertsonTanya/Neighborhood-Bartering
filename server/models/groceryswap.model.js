@@ -9,7 +9,7 @@ const GroceryswapSchema = new mongoose.Schema(
     description: {
       type: String,
       required: [true, "Description is requried"],
-      minlength: [20, "Must be at least 20 Characters"],
+      minlength: [10, "Must be at least 10 Characters"],
       maxlength: [200, "Cannot exceed 200 Characters"],
     },
     sugItem: {
