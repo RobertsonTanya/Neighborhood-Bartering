@@ -1,5 +1,6 @@
 const GrocerySwap = require("../models/groceryswap.model");
 const jwt = require("jsonwebtoken");
+const User = require("../models/user.model");
 
 module.exports = {
   createNewItem: (req, res) => {
@@ -43,20 +44,37 @@ module.exports = {
         });
     },
 
-// We'll need a findAllItemsByUser and maybe this:
+    findAllItemsByUser: (req, res) => {
+      if(req.jwtpayload.id !== req.params.createdBy){
+        console.log('not the user')
 
-findAllItemsByUser: (req, res) => {
-    GrocerySwap.findOne({createdBy: req.params.createdBy})
-      .populate("createdBy", "username email")
-      .then((allItems) => {
-        console.log(allItems);
-        res.json(allItems);
-      })
-      .catch((err) => {
-        console.log("error finding all items by user");
-        res.status(400).json(err);
-      });
-  },
+        User.findOne({username: req.params.username})
+          .then((userNotLoggedIn)=>{
+            GrocerySwap.find({createdBy: userNotLoggedIn._id})
+              .populate("createdBy", "username email")
+              .then((allItemsFromUser)=>{
+                console.log(allItemsFromUser);
+                res.json(allItemsFromUser);
+              })
+              .catch((err)=>{
+                console.log(err);
+                res.status(400).json();
+              })
+          })
+      } else {
+        console.log('current user');
+        GrocerySwap.find({createdBy: req.jwtpayload.id})
+          .populate("createdBy", "username email")
+          .then((allItemsFromLoggedInUser)=>{
+            console.log(allItemsFromLoggedInUser);
+            res.json(allItemsFromLoggedInUser);
+          })
+          .catch((err)=>{
+            console.log(err);
+            res.status(400).json();
+          })
+      }
+    },
 
   updateItem: (req, res) => {
     GrocerySwap.findOneAndUpdate({ _id: req.params.id }, req.body, {
