@@ -27,6 +27,10 @@ const GroceryswapSchema = new mongoose.Schema(
     altMessage: {
       type: String,
       maxlength: [150, "Cannot exceed 150 characters"]
+    },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
     }
   },
   { timestamps: true }

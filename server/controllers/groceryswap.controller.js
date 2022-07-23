@@ -1,8 +1,16 @@
 const GrocerySwap = require("../models/groceryswap.model");
+const jwt = require("jsonwebtoken");
 
 module.exports = {
   createNewItem: (req, res) => {
-    GrocerySwap.create(req.body)
+    const newGroceryObject = new GrocerySwap(req.body);
+
+    const decodedJWT = jwt.decode(req.cookies.usertoken, {
+      complete: true
+    })
+    newGroceryObject.createdBy = decodedJWT.payload.id;
+
+    newGroceryObject.save()
       .then((newItem) => {
         console.log(newItem);
         res.json(newItem);
@@ -12,6 +20,7 @@ module.exports = {
 
   findAllItems: (req, res) => {
     GrocerySwap.find()
+      .populate("createdBy", "username email")
       .then((allItems) => {
         console.log(allItems);
         res.json(allItems);
@@ -34,20 +43,20 @@ module.exports = {
         });
     },
 
-// We'll need a findAllItemsbyUser and maybe this:
+// We'll need a findAllItemsByUser and maybe this:
 
-//   showAllItems: (req, res) => {
-//     GrocerySwap.find()
-//       .populate("createdBy", "username email")
-//       .then((allitems) => {
-//         console.log(allitems);
-//         res.json(allitems);
-//       })
-//       .catch((err) => {
-//         console.log("error showing all items");
-//         res.status(400).json(err);
-//       });
-//   },
+findAllItemsByUser: (req, res) => {
+    GrocerySwap.findOne({createdBy: req.params.createdBy})
+      .populate("createdBy", "username email")
+      .then((allItems) => {
+        console.log(allItems);
+        res.json(allItems);
+      })
+      .catch((err) => {
+        console.log("error finding all items by user");
+        res.status(400).json(err);
+      });
+  },
 
   updateItem: (req, res) => {
     GrocerySwap.findOneAndUpdate({ _id: req.params.id }, req.body, {
