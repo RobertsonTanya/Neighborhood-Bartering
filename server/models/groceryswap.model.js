@@ -10,7 +10,7 @@ const GroceryswapSchema = new mongoose.Schema(
       type: String,
       required: [true, "Description is requried"],
       minlength: [20, "Must be at least 20 Characters"],
-      maxlength: [200, "Cannot be more than 200 Characters"],
+      maxlength: [200, "Cannot exceed 200 Characters"],
     },
     sugItem: {
       type: String,
@@ -21,6 +21,13 @@ const GroceryswapSchema = new mongoose.Schema(
       type: String,
       required: [true, "Image Url is required"],
     },
+    altTrade: {
+      type: Boolean,
+    },
+    altMessage: {
+      type: String,
+      maxlength: [150, "Cannot exceed 150 characters"]
+    }
   },
   { timestamps: true }
 );
