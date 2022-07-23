@@ -46,7 +46,7 @@ module.exports = {
 // We'll need a findAllItemsByUser and maybe this:
 
 findAllItemsByUser: (req, res) => {
-    GrocerySwap.findOne({createdBy: req.params.createdBy})
+    GrocerySwap.find({createdBy: req.params.createdBy})
       .populate("createdBy", "username email")
       .then((allItems) => {
         console.log(allItems);
