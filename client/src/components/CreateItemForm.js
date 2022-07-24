@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-<<<<<<< Updated upstream
-=======
-import styles from "../styles/createitemform.module.css";
-import logo from "../images/logo.png";
->>>>>>> Stashed changes
+import Header from "./Header";
 
 const CreateItemForm = () => {
   const [itemName, setItemName] = useState("");
@@ -58,6 +54,7 @@ const CreateItemForm = () => {
 
   return (
     <div>
+      <Header login={false}/>
       <div>
         <form onSubmit={onSubmitHandler}>
           <label>Item Name: </label>

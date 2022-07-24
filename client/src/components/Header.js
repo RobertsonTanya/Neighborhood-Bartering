@@ -9,17 +9,17 @@ const Header = (props) => {
   return (
     <div>
       <div className={styles.navigation}>
-        <div className={styles.nav1}>
+        <div className={styles.navLeft}>
           <Link to="/">
             <img className={styles.logo} src={logo} alt="logo" />
           </Link>
           {login ? (
             <button className={styles.dashboardbtn}>
-              <Link to="/register">Sign Up / Login</Link>
+              <Link to="/register">Sign Up | Login</Link>
             </button>
           ) : null}
         </div>
-        <div className={styles.nav2}>
+        <div className={styles.navRight}>
           <Link to="/create">Create Item</Link> |
           <Link to="/myitems">My Items</Link> |
           {/* ^^I will make sure this has the proper authentication on it */}

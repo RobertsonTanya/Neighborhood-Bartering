@@ -10,24 +10,31 @@
 
 /* Navigation */
 
+a {
+  text-decoration: none;
+  padding: 3px;
+  color: black;
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
   padding: 10px;
 }
-.nav1 {
+.navLeft {
   align-items: center;
   display: flex;
   justify-content: space-evenly;
   flex: 1;
 }
-.nav2 {
+.navRight {
   align-items: center;
   justify-content:center;
   display: flex;
   flex: 1;
   text-align: center;
 }
+
 
 .dashboardbtn {
   background-color: white;
