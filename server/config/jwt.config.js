@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const env = require('dotenv');
+require("dotenv").config();
 
 module.exports = {
     authenticate(req, res, next){
@@ -12,7 +12,7 @@ module.exports = {
                     res.status(401).json({verified: false});
                 } else {
                     console.log(res.json);
-                    req.jwtpayload = payload;
+                    req.jwtpayload = payload
                     next();
                 }
             })
