@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import styles from "../styles/createitemform.module.css"
+import logo from "../images/logo.png";
 
 const CreateItemForm = () => {
   const [itemName, setItemName] = useState("");
@@ -53,6 +55,20 @@ const CreateItemForm = () => {
 
   return (
     <div>
+      <div className={styles.navigation}>
+        <div className={styles.nav1}>
+          <Link to="/">
+            <img className={styles.logo} src={logo} alt="logo" />
+          </Link>
+          <button className={styles.dashboardbtn}>
+            <Link to="/">Dashboard</Link>
+          </button>
+        </div>
+        <div className={styles.nav2}>
+          <Link to="/create">Create Item</Link> |<Link to="/">Log Out</Link>
+          {/* Logout will be something different when that axios request is made */}
+        </div>
+      </div>
       <div>
         <form onSubmit={onSubmitHandler}>
           <label>Item Name: </label>

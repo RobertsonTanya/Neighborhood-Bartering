@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../styles/myitemsdisplay.module.css";
+import logo from "../images/logo.png";
 
 const MyItemsDisplay = () => {
   const [allMyItems, setAllMyItems] = useState([]);
@@ -21,7 +22,7 @@ const MyItemsDisplay = () => {
 
   const deleteHandler = (idFromBelow) => {
     axios
-      .delete(`http://localhost:8000/api/bookshelf/${idFromBelow}`)
+      .delete(`http://localhost:8000/api/groceryswap/${idFromBelow}`)
       .then((res) => {
         console.log("deleted successfully");
         console.log(res);
@@ -37,14 +38,27 @@ const MyItemsDisplay = () => {
   return (
     <div>
       <div className={`container ${styles.container}`}>
-        <div>Header Area for Navigation</div>
+        <div className={styles.navigation}>
+          <div className={styles.nav1}>
+            <Link to="/">
+              <img className={styles.logo} src={logo} alt="logo" />
+            </Link>
+            <button className={styles.dashboardbtn}>
+              <Link to="/">Dashboard</Link>
+            </button>
+          </div>
+          <div className={styles.nav2}>
+            <Link to="/create">Create Item</Link> |<Link to="/">Log Out</Link>
+            {/* Logout will be something different when that axios request is made */}
+          </div>
+        </div>
         {/* {if (createdBy) ?  } */}
-        <div>
+        <div className={styles.container}>
           <div className={styles.tableContainer}>
             <ul className={styles.tableHeader}>
               <li>Items</li>
               <li>Description</li>
-              <li>Date</li>
+              <li>Suggest Items</li>
               <li>Actions</li>
             </ul>
           </div>
@@ -54,15 +68,18 @@ const MyItemsDisplay = () => {
                 console.log(items);
               }
               return (
-                <ul key={index}>
+                <ul className={styles.tableRow} key={index}>
                   <li>{items.itemName}</li>
                   <li>{items.description}</li>
-                  <li>Date</li>
+                  <li>{items.sugItem}</li>
                   <li>
-                    <button>
+                    <button className={styles.tablebtn}>
                       <Link to={`/UpdateItem/${items._id}`}> Update </Link>
                     </button>
-                    <button onClick={() => deleteHandler(items._id, index)}>
+                    <button
+                      className={styles.tablebtn}
+                      onClick={() => deleteHandler(items._id, index)}
+                    >
                       Delete
                     </button>
                   </li>

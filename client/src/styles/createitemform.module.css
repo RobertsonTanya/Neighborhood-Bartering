@@ -1,13 +1,6 @@
-.dashboard {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
 .logo {
   width: 200px;
 }
-
 
 /* Navigation */
 
