@@ -3,9 +3,17 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 
 module.exports = {
-  createNewItem: (req, res) => {
-    const newGroceryObject = new GrocerySwap(req.body);
-
+  createNewItem: async (req, res) => {
+    console.log(req.body);
+    req.body.user_id= req.params.user_id;
+    try{
+      const newGroceryObject = await GrocerySwap.create(req.body);
+      console.log(newGroceryObject);
+      res.json(newGroceryObject)
+    }catch(error){
+      console.log("error!");
+      res.status(400).json(error)
+    }
     const decodedJWT = jwt.decode(req.cookies.usertoken, {
       complete: true
     })

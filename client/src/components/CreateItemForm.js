@@ -7,8 +7,6 @@ const CreateItemForm = () => {
   const [description, setDescription] = useState("");
   const [sugItem, setSugItem] = useState("");
   const [imgUrl, setImgUrl] = useState("");
-  const [altTrade, setAltTrade] = useState("");
-  const [altMessage, setAltMessage] = useState("");
   // const [createdBy, setCreatedBy] = useState("");
   // const [date, setDate] = useState(""); >> update model with "date: type" with date validators
   const [errors, setErrors] = useState({});
@@ -21,8 +19,6 @@ const CreateItemForm = () => {
       description,
       sugItem,
       imgUrl,
-      altTrade,
-      altMessage,
     });
     axios
       .post(
@@ -32,8 +28,6 @@ const CreateItemForm = () => {
           description,
           sugItem,
           imgUrl,
-          altTrade,
-          altMessage,
         }
         // {
         //   withCredentials: true,
@@ -87,20 +81,6 @@ const CreateItemForm = () => {
             onChange={(e) => setImgUrl(e.target.value)}
           />
           {/* {errors.imgUrl ? <p>{errors.imgUrl.message}</p> : null} */}
-          <input
-            name="altTrade"
-            type="checkbox"
-            checked={altTrade}
-            onChange={(e) => setAltTrade(e.target.value)}
-          />
-          {/* {errors.altTrade ? <p>{errors.altTrade.message}</p> : null} */}
-          <textarea
-            name="altMessage"
-            type="text"
-            value={altMessage}
-            onChange={(e) => setAltMessage(e.target.value)}
-          />
-          {/* {errors.altMessage ? <p>{errors.altMessage.message}</p> : null} */}
           <div>
             <input type="submit" value="Add Item" />
           </div>

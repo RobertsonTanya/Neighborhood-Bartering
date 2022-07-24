@@ -21,13 +21,6 @@ const GroceryswapSchema = new mongoose.Schema(
       type: String,
       required: [true, "Image Url is required"],
     },
-    altTrade: {
-      type: Boolean,
-    },
-    altMessage: {
-      type: String,
-      maxlength: [150, "Cannot exceed 150 characters"]
-    },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
