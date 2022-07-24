@@ -18,18 +18,18 @@ a {
 
 .navigation {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 10px;
 }
 .navLeft {
   align-items: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex: 1;
 }
 .navRight {
   align-items: center;
-  justify-content:center;
+  justify-content:flex-end;
   display: flex;
   flex: 1;
   text-align: center;
@@ -43,15 +43,16 @@ a {
   box-shadow: 0px 5px 10px black;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
+  margin-left: 20px;
   width: 170px;
 }
 .dashboardbtn:hover {
   cursor: pointer;
-  background-color: rgb(245, 245, 49);
+  background-color: #f1f086;
   border-radius: 1px solid black;
 }
 .dashboardbtn:active {
-  background-color: rgb(245, 245, 49);
+  background-color: #f1f086;
   box-shadow: 0px 5px 10px black;
   transform: translateY(4px);
 }

@@ -7,7 +7,7 @@ const Header = (props) => {
   const { login } = props;
 
   return (
-    <div>
+    <div className={`container ${styles.container}`}>
       <div className={styles.navigation}>
         <div className={styles.navLeft}>
           <Link to="/">
@@ -20,10 +20,11 @@ const Header = (props) => {
           ) : null}
         </div>
         <div className={styles.navRight}>
+          <Link to="/">Dashboard</Link> |
           <Link to="/create">Create Item</Link> |
           <Link to="/myitems">My Items</Link> |
           {/* ^^I will make sure this has the proper authentication on it */}
-          <Link to="/">Dashboard</Link> |<Link to="/">Log Out</Link>
+          <Link to="/">Log Out</Link>
           {/* Logout will be something different when that axios request is made */}
         </div>
       </div>
