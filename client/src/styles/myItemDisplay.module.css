@@ -1,3 +1,8 @@
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
 .tableContainer {
   margin: 20px;
   padding: 0px;
@@ -7,59 +12,11 @@
 .tableRow {
   list-style-type: none;
   display: flex;
-  width: fit-content;
+  justify-content: space-between;
   margin: 0px;
 }
 .tableHeader {
   font-weight: bold;
-}
-
-/* Navigation */
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-.nav1,
-.nav2 {
-  align-items: center;
-  justify-content: space-around;
-  display: flex;
-}
-
-.dashboardbtn {
-  border: 1px solid black;
-  border-radius: 30px;
-  box-shadow: 0px 5px 10px black;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: larger;
-  height: 50px;
-  margin: 30px;
-  width: 200px;
-}
-.dashboardbtn:hover {
-  cursor: pointer;
-  background-color: rgb(245, 245, 49);
-  color: wheat;
-  border-radius: 1px solid black;
-}
-.dashboardbtn:active {
-  background-color: rgb(245, 245, 49);
-  box-shadow: 0px 5px 10px black;
-
-  transform: translateY(4px);
-}
-@keyframes dashboardbtn {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 a {
@@ -68,7 +25,6 @@ a {
   cursor: pointer;
   padding: 5px;
 }
-
 
 .tablebtn {
   background-color: aliceblue;
@@ -82,14 +38,27 @@ a {
 }
 
 ul {
-  padding: 0px;
-  margin: 0px;
+  max-width: 1200px;
+  padding-inline-start: 0;
 }
+
+
 li {
-  width: 125px;
+  width: 25%;
   padding-right: 10px;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
   border-bottom: 2px solid black;
 }
+
+/* .itmes {
+  width: 25%;
+}
+.description {
+  width: 25%;
+}
+.suggested {
+  width: 25%;
+}
+
+.actions {
+  width: 25%;
+} */

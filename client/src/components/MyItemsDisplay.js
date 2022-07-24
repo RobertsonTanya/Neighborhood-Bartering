@@ -36,16 +36,16 @@ const MyItemsDisplay = () => {
   };
 
   return (
-    <div>
+    <div className={`container ${styles.container}`}>
       {/* {if (createdBy) ?  } */}
-      <div className={styles.container}>
-        <Header login={false} />
+      <Header login={false} />
+      <div>
         <div className={styles.tableContainer}>
           <ul className={styles.tableHeader}>
-            <li>Items</li>
-            <li>Description</li>
-            <li>Suggest Items</li>
-            <li>Actions</li>
+            <li className={styles.items}>Items</li>
+            <li className={styles.description}>Description</li>
+            <li className={styles.suggested}>Suggest Items</li>
+            <li className={styles.actions}>Actions</li>
           </ul>
         </div>
         <div className={styles.tableContainer}>
@@ -55,10 +55,10 @@ const MyItemsDisplay = () => {
             }
             return (
               <ul className={styles.tableRow} key={index}>
-                <li>{items.itemName}</li>
-                <li>{items.description}</li>
-                <li>{items.sugItem}</li>
-                <li>
+                <li className={styles.items}>{items.itemName}</li>
+                <li className={styles.description}>{items.description}</li>
+                <li className={styles.suggested}>{items.sugItem}</li>
+                <li className={styles.actions}>
                   <button className={styles.tablebtn}>
                     <Link to={`/UpdateItem/${items._id}`}> Update </Link>
                   </button>
