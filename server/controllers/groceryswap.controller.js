@@ -19,26 +19,26 @@ module.exports = {
     })
     newGroceryObject.createdBy = decodedJWT.payload.id;
 
-    newGroceryObject.save()
-      .then((newItem) => {
-        console.log(newItem);
-        res.json(newItem);
-      })
-      .catch((err) => res.status(400).json({ err }));
+    // newGroceryObject.save()
+    //   .then((newItem) => {
+    //     console.log(newItem);
+    //     res.json(newItem);
+    //   })
+    //   .catch((err) => res.status(400).json({ err }));
   },
 
-  findAllItems: (req, res) => {
-    GrocerySwap.find()
+  findAllItems: async (req, res) => {
+    try {
+      const allItems= await GrocerySwap.find()
       .populate("createdBy", "username email")
-      .then((allItems) => {
-        console.log(allItems);
-        res.json(allItems);
-      })
-      .catch((err) => {
-        console.log("error finding items");
-        res.status(400).json(err);
-      });
+      .exec();
+      res.json(allItems);
+    } catch(error){
+      console.log("error finding items");
+      res.status(400).json(error);
+    }
   },
+
   
     getOneItem: (req, res) => {
       GrocerySwap.findOne({ _id: req.params.id })

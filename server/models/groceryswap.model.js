@@ -17,6 +17,10 @@ const GroceryswapSchema = new mongoose.Schema(
       required: [true, "Suggested item is required"],
       minlength: [3, "Suggested Item must be at least 3 characters"],
     },
+    user_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
     imgUrl: {
       type: String,
       required: [true, "Image Url is required"],
