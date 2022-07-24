@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 const CreateItemForm = () => {
   const [itemName, setItemName] = useState("");
@@ -53,6 +54,7 @@ const CreateItemForm = () => {
 
   return (
     <div>
+      <Header login={false}/>
       <div>
         <form onSubmit={onSubmitHandler}>
           <label>Item Name: </label>

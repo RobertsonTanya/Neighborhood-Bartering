@@ -1,0 +1,95 @@
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 200px;
+}
+
+/* Navigation */
+
+a {
+  text-decoration: none;
+  padding: 3px;
+  color: black;
+}
+
+.navigation {
+  display: flex;
+  /* justify-content: space-between; */
+  padding: 10px;
+}
+.navLeft {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+.navRight {
+  align-items: center;
+  justify-content:flex-end;
+  display: flex;
+  flex: 1;
+  text-align: center;
+}
+
+
+.dashboardbtn {
+  background-color: white;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px black;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  margin-left: 20px;
+  width: 170px;
+}
+.dashboardbtn:hover {
+  cursor: pointer;
+  background-color: #f1f086;
+  border-radius: 1px solid black;
+}
+.dashboardbtn:active {
+  background-color: #f1f086;
+  box-shadow: 0px 5px 10px black;
+  transform: translateY(4px);
+}
+@keyframes dashboardbtn {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.loginbtn {
+  box-shadow: 0px 2px 5px black;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: white;
+}
+.loginbtn:hover {
+  cursor: pointer;
+  border-radius: 1px solid black;
+}
+.loginbtn:active {
+  box-shadow: 0px 5px 10px black;
+  transform: translateY(4px);
+}
+@keyframes loginbtn {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

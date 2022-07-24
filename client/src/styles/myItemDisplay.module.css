@@ -1,21 +1,59 @@
-.table-Container {
-  display: flex;
-  margin:0px;
+.tableContainer {
+  margin: 20px;
   padding: 0px;
 }
 
-.table-header {
+.tableHeader,
+.tableRow {
   list-style-type: none;
   display: flex;
-  width: fit-content;
-  margin: 0px;
-}
-ul {
-  padding: 0px;
-  margin: 0px;
-}
-li {
-  padding-right:10px;
   justify-content: space-between;
-  align-items: center;
+  margin: 0px;
 }
+.tableHeader {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.tablebtn {
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family: Tahoma;
+  height: 30px;
+  margin: 3px;
+  width: 80px;
+  cursor: pointer;
+}
+
+ul {
+  max-width: 1200px;
+  padding-inline-start: 0;
+}
+
+
+li {
+  width: 25%;
+  padding-right: 10px;
+  border-bottom: 2px solid black;
+}
+
+/* .itmes {
+  width: 25%;
+}
+.description {
+  width: 25%;
+}
+.suggested {
+  width: 25%;
+}
+
+.actions {
+  width: 25%;
+} */
