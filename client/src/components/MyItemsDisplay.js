@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "../styles/myItemDisplay.module.css";
 import Header from "./Header";
 
-const MyItemsDisplay = () => {
+const MyItemsDisplay = (props) => {
+  const { user, setUser } = props;
   const [allMyItems, setAllMyItems] = useState([]);
   const navigate = useNavigate();
 
@@ -38,7 +39,7 @@ const MyItemsDisplay = () => {
   return (
     <div className={`container ${styles.container}`}>
       {/* {if (createdBy) ?  } */}
-      <Header login={false} />
+      <Header user={user} setUser={setUser} showLoginBtn={false} />
       <div>
         <div className={styles.tableContainer}>
           <ul className={styles.tableHeader}>

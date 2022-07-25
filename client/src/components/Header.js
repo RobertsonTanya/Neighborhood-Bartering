@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "../styles/header.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -8,24 +8,9 @@ import logo from "../images/logo.png";
 
 
 const Header = (props) => {
-  const { showLoginBtn } = props;
+  const { showLoginBtn, user, setUser } = props;
   const navigate = useNavigate();
 
-  const [user, setUser] = useState({});
-
-  useEffect(()=>{
-    axios.get("http://localhost:8000/api/users",
-    {
-      withCredentials: true
-    })
-    .then((res)=>{
-      console.log(res.data);
-      setUser(res.data);
-    })
-    .catch((err)=>{
-      console.log(err);
-    })
-  }, []);
 
   const logout = () => {
     axios.post("http://localhost:8000/api/users/logout")

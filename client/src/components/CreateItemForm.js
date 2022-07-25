@@ -3,7 +3,8 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
 
-const CreateItemForm = () => {
+const CreateItemForm = (props) => {
+  const { user, setUser } = props;
   const [itemName, setItemName] = useState("");
   const [description, setDescription] = useState("");
   const [sugItem, setSugItem] = useState("");
@@ -35,7 +36,7 @@ const CreateItemForm = () => {
           imgUrl,
           altTrade,
           altMessage,
-        }
+        },
         // {
         //   withCredentials: true,
         // }
@@ -54,7 +55,7 @@ const CreateItemForm = () => {
 
   return (
     <div>
-      <Header login={false}/>
+      <Header user={user} setUser={setUser} showLoginBtn={false} />
       <div>
         <form onSubmit={onSubmitHandler}>
           <label>Item Name: </label>
