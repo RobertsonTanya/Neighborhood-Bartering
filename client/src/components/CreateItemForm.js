@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
+import styles from "../styles/createItemForm.module.css";
 
 const CreateItemForm = () => {
   const [itemName, setItemName] = useState("");
@@ -53,28 +54,35 @@ const CreateItemForm = () => {
   };
 
   return (
-    <div>
-      <Header login={false}/>
-      <div>
-        <form onSubmit={onSubmitHandler}>
+    <div className={`container ${styles.container}`}>
+      <Header login={false} />
+      <h1>Create an Item for Trade</h1>
+      <div className={styles.formContainer}>
+        <form onSubmit={onSubmitHandler} className={styles.form}>
           <label>Item Name: </label>
           <input
+            className={styles.input}
             name="itemName"
             type="text"
             value={itemName}
             onChange={(e) => setItemName(e.target.value)}
           />
           {/* {errors.itemName ? <p>{errors.itemName.message}</p> : null} */}
+
           <label>Short Description: </label>
+          <br></br>
           <textarea
+            className={styles.input}
             name="description"
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
           {/* {errors.description ? <p>{errors.description.message}</p> : null} */}
+          <br></br>
           <label>Suggest Item: </label>
           <input
+            className={styles.input}
             name="sugItem"
             type="text"
             value={sugItem}
@@ -83,28 +91,19 @@ const CreateItemForm = () => {
           {/* {errors.sugItem ? <p>{errors.sugItem.message}</p> : null}  */}
           <label>Img Url: </label>
           <input
+            className={styles.input}
             name="imgUrl"
             type="text"
             value={imgUrl}
             onChange={(e) => setImgUrl(e.target.value)}
           />
           {/* {errors.imgUrl ? <p>{errors.imgUrl.message}</p> : null} */}
-          <input
-            name="altTrade"
-            type="checkbox"
-            checked={altTrade}
-            onChange={(e) => setAltTrade(e.target.value)}
-          />
-          {/* {errors.altTrade ? <p>{errors.altTrade.message}</p> : null} */}
-          <textarea
-            name="altMessage"
-            type="text"
-            value={altMessage}
-            onChange={(e) => setAltMessage(e.target.value)}
-          />
-          {/* {errors.altMessage ? <p>{errors.altMessage.message}</p> : null} */}
-          <div>
-            <input type="submit" value="Add Item" />
+          <div  className={styles.addBtnContainer}>
+            <input
+              className={styles.addItemBtn}
+              type="submit"
+              value="Add Item"
+            />
           </div>
         </form>
       </div>

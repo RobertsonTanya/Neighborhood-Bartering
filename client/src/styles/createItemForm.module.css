@@ -1,0 +1,48 @@
+.formContainer,
+h1 {
+  margin-bottom:20px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+.input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+}
+label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+.addBtnContainer {
+  justify-content: space-around;
+}
+
+.addItemBtn {
+  flex-wrap: wrap;
+  width: 150px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 0px 5px 10px black;
+  background-color: white;
+}
+.addItemBtn:hover {
+  cursor: pointer;
+  background-color: #f1f086;
+  border-radius: 1px solid black;
+}
+.addItemBtn:active {
+  background-color: #f1f086;
+  box-shadow: 0px 5px 10px black;
+  transform: translateY(4px);
+}
