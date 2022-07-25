@@ -7,7 +7,7 @@ import Header from './Header';
 import styles from "../styles/loginreg.module.css";
 
 const LoginReg = (props) => {
-    const { user, sdetUser } = props;
+    const { user, setUser } = props;
     const [showLogin, setShowLogin] = useState(false);
 
     return (
