@@ -2,7 +2,12 @@
   text-align: right;
 }
 
-img {
+.imgContainer {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.img {
   width: 200px;
 }
 
@@ -20,7 +25,7 @@ img {
   justify-content: space-between;
 }
 
-button {
+.button {
   height: 30px;
 }
 
