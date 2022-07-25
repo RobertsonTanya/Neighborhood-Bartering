@@ -44,6 +44,8 @@ module.exports = {
         });
     },
 
+
+    //video stopped at 26:28
     findAllItemsByUser: (req, res) => {
       if(req.jwtpayload.username !== req.params.username){
         console.log('not the user')
