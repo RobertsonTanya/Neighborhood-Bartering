@@ -54,7 +54,7 @@ const Registration = (props) => {
             <h1>Register</h1>
             {confirmReg ? <h4 className={styles.confirmReg}>{confirmReg}</h4> : null}
             <form onSubmit={register}>
-                <div>
+                <div className={styles.inputContainer}>
                     <label>Username</label>
                     {errors.username ? (
                         <span className="error">
@@ -63,7 +63,7 @@ const Registration = (props) => {
                     ) : null}
                     <input type="text" name="username" value={user.username} onChange={(e) => handleChange(e)} />
                 </div>
-                <div>
+                <div className={styles.inputContainer}>
                     <label>Email</label>
                     {errors.email ? (
                         <span className="error">
@@ -72,7 +72,7 @@ const Registration = (props) => {
                     ) : null}
                     <input type="email" name="email" value={user.email} onChange={(e) => handleChange(e)} />
                 </div>
-                <div>
+                <div className={styles.inputContainer}>
                     <label>Password</label>
                     {errors.password ? (
                         <span className="error">
@@ -81,7 +81,7 @@ const Registration = (props) => {
                     ) : null}
                     <input type="password" name="password" value={user.password} onChange={(e) => handleChange(e)} />
                 </div>
-                <div>
+                <div className={styles.inputContainer}>
                     <label>Confirm Password</label>
                     {errors.confirmPassword ? (
                         <span className="error">
