@@ -4,6 +4,8 @@ import CreateItemForm from './components/CreateItemForm';
 import Dashboard from './components/Dashboard';
 import Requests from './components/RequestPage';
 import MyItemsDisplay from './components/MyItemsDisplay';
+import LoginReg from './components/LoginReg';
+import Profile from './components/Profile';
 
 import './styles/App.css';
 
@@ -15,9 +17,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard />} default />
-          <Route path="/requests" element={<Requests />} default />
-          <Route path="/create" element={<CreateItemForm />} default />
-          <Route path="/myitems" element={<MyItemsDisplay />} default/>
+          <Route path="/loginreg" element={<LoginReg />} />
+          <Route path="/user/profile/:username" element={<Profile />} />
+          <Route path="/requests" element={<Requests />}  />
+          <Route path="/create" element={<CreateItemForm />}  />
+          <Route path="/myitems" element={<MyItemsDisplay />} />
         </Routes>
       </BrowserRouter>
     </div>

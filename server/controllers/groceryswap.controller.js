@@ -44,14 +44,15 @@ module.exports = {
         });
     },
 
+
     findAllItemsByUser: (req, res) => {
-      if(req.jwtpayload.id !== req.params.createdBy){
+      if(req.jwtpayload.username !== req.params.username){
         console.log('not the user')
 
         User.findOne({username: req.params.username})
           .then((userNotLoggedIn)=>{
             GrocerySwap.find({createdBy: userNotLoggedIn._id})
-              .populate("createdBy", "username email")
+              .populate("createdBy", "username")
               .then((allItemsFromUser)=>{
                 console.log(allItemsFromUser);
                 res.json(allItemsFromUser);
@@ -64,7 +65,7 @@ module.exports = {
       } else {
         console.log('current user');
         GrocerySwap.find({createdBy: req.jwtpayload.id})
-          .populate("createdBy", "username email")
+          .populate("createdBy", "username")
           .then((allItemsFromLoggedInUser)=>{
             console.log(allItemsFromLoggedInUser);
             res.json(allItemsFromLoggedInUser);
