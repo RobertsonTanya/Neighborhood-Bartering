@@ -5,7 +5,6 @@ import Dashboard from './components/Dashboard';
 import Requests from './components/RequestPage';
 import MyItemsDisplay from './components/MyItemsDisplay';
 import LoginReg from './components/LoginReg';
-import Profile from './components/Profile';
 
 import './styles/App.css';
 
@@ -18,7 +17,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} default />
           <Route path="/loginreg" element={<LoginReg />} />
-          <Route path="/user/profile/:username" element={<Profile />} />
           <Route path="/requests" element={<Requests />}  />
           <Route path="/create" element={<CreateItemForm />}  />
           <Route path="/myitems" element={<MyItemsDisplay />} />
