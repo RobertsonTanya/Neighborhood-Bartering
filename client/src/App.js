@@ -8,6 +8,7 @@ import LoginReg from './components/LoginReg';
 import Profile from './components/Profile';
 
 import './styles/App.css';
+import UpdateMyItems from './components/UpdateMyItems';
 
 
 function App() {
@@ -19,9 +20,10 @@ function App() {
           <Route path="/" element={<Dashboard />} default />
           <Route path="/loginreg" element={<LoginReg />} />
           <Route path="/user/profile/:username" element={<Profile />} />
-          <Route path="/requests" element={<Requests />}  />
-          <Route path="/create" element={<CreateItemForm />}  />
+          <Route path="/requests" element={<Requests />} />
+          <Route path="/create" element={<CreateItemForm />} />
           <Route path="/myitems" element={<MyItemsDisplay />} />
+          <Route path=":id/Update" element={<UpdateMyItems />} />
         </Routes>
       </BrowserRouter>
     </div>

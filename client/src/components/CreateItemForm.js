@@ -36,10 +36,10 @@ const CreateItemForm = () => {
           imgUrl,
           altTrade,
           altMessage,
+        },
+        {
+          withCredentials: true,
         }
-        // {
-        //   withCredentials: true,
-        // }
       )
       .then((res) => {
         console.log(res);
@@ -56,7 +56,7 @@ const CreateItemForm = () => {
   return (
     <div className={`container ${styles.container}`}>
       <Header login={false} />
-      <h1>Create an Item for Trade</h1>
+      <h1 className={styles.h1}>Create an Item for Trade</h1>
       <div className={styles.formContainer}>
         <form onSubmit={onSubmitHandler} className={styles.form}>
           <label>Item Name: </label>
@@ -70,7 +70,6 @@ const CreateItemForm = () => {
           {/* {errors.itemName ? <p>{errors.itemName.message}</p> : null} */}
 
           <label>Short Description: </label>
-          <br></br>
           <textarea
             className={styles.input}
             name="description"
@@ -79,7 +78,6 @@ const CreateItemForm = () => {
             onChange={(e) => setDescription(e.target.value)}
           />
           {/* {errors.description ? <p>{errors.description.message}</p> : null} */}
-          <br></br>
           <label>Suggest Item: </label>
           <input
             className={styles.input}
@@ -98,7 +96,7 @@ const CreateItemForm = () => {
             onChange={(e) => setImgUrl(e.target.value)}
           />
           {/* {errors.imgUrl ? <p>{errors.imgUrl.message}</p> : null} */}
-          <div  className={styles.addBtnContainer}>
+          <div className={styles.addBtnContainer}>
             <input
               className={styles.addItemBtn}
               type="submit"
