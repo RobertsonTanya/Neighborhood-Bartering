@@ -2,7 +2,7 @@
   text-align: right;
 }
 
-img {
+.img {
   width: 200px;
 }
 
@@ -20,7 +20,7 @@ img {
   justify-content: space-between;
 }
 
-button {
+.button {
   height: 30px;
 }
 

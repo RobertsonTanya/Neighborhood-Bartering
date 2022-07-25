@@ -10,12 +10,12 @@ function Post(props) {
       <h2>{item.itemName}</h2>
       <p className={styles.dateTime}>{item.createdAt}</p>
       <div className={styles.split}>
-        <img src={item.imgUrl} alt={item.name} />
+        <img className={styles.img} src={item.imgUrl} alt={item.name} />
         <p>{item.description}</p>
       </div>
       <div className={styles.split}>
         <p>{item.sugItem}</p>
-        <button>Request Trade</button>
+        <button className={styles.button}>Request Trade</button>
       </div>
       <input type="checkbox" name="" id="alternate" />
       <label htmlFor="alternate">Alternate Item</label>

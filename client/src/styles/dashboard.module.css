@@ -1,9 +1,6 @@
 .dashboard {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-}
-
-.logo {
-  width: 200px;
+  justify-content: space-around;
+  min-height: 100vh;
 }
