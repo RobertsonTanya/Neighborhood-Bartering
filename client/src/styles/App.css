@@ -2,6 +2,7 @@
   background-image:url('../images/Background\ Green.png'), url('../images/Background.png');
   background-position: top center, bottom center;
   background-size: cover, cover;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .container{
