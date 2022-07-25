@@ -24,7 +24,6 @@ const UpdateMyItems = (prop) => {
       .catch((err) => console.log(err));
   }, []);
 
-
   const updateItemHandler = (e) => {
     e.preventDefault();
     axios
@@ -43,7 +42,6 @@ const UpdateMyItems = (prop) => {
         console.log(err);
       });
   };
-
 
   return <div>UpdateMyItems</div>;
 };
