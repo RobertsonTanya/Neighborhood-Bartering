@@ -1,5 +1,5 @@
 const groceryswapController = require("../controllers/groceryswap.controller");
-const { authenticate } = require("../config/jwt.config");
+const { authenticate } = require("../middleware/jwt.config.js");
 
 module.exports = (app) => {
     app.post("/api/GrocerySwap/create", authenticate, groceryswapController.createNewItem);

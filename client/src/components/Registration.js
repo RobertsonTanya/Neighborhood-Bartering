@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import styles from "../styles/registration.module.css";
+import styles from "../styles/loginreg.module.css";
 
 
 
 const Registration = (props) => {
+    const { setShowLogin } = props;
+
     const [confirmReg, setConfirmReg] = useState("");
     const [errors, setErrors] = useState({});
     const [user, setUser] = useState({
@@ -52,8 +54,10 @@ const Registration = (props) => {
     return (
         <div>
             <h1 className={styles.heading}>Register</h1>
-            {confirmReg ? <h4 className="success">{confirmReg}</h4> : null}
             <form className={styles.form} onSubmit={register}>
+                {confirmReg ? <h4 className="success">{confirmReg}</h4> : null}
+                <p className={styles.loginToggle}>Already have login credentials? </p>
+                <p className={styles.loginToggleLink} onClick={()=>setShowLogin(true)}>  Log in here</p>
                 <div className={styles.inputContainer}>
                     <label>Username</label>
                     {errors.username ? (
