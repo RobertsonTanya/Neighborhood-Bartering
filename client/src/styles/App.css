@@ -8,3 +8,14 @@
   max-width: 1200px;
   margin: 20px auto;
 }
+
+.success {
+  background-color: #9ffbcd;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.error {
+  color: darkred;
+  font-weight: 600;
+}
