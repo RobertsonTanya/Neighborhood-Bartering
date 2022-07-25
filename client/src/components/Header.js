@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/header.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 import logo from "../images/logo.png";
@@ -9,6 +9,7 @@ import logo from "../images/logo.png";
 
 const Header = (props) => {
   const { showLoginBtn } = props;
+  const navigate = useNavigate();
 
   const [user, setUser] = useState({});
 
@@ -31,6 +32,7 @@ const Header = (props) => {
     .then((res)=>{
       console.log(res.data);
       setUser({});
+      navigate('/');
     })
     .catch((err)=>{
       console.log(err);
