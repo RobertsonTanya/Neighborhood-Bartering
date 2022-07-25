@@ -25,6 +25,10 @@
     max-width: 250px;
 }
 
+.inputContainer input {
+    height: 25px;
+}
+
 .submitBtn {
     background-color: #66e9a4;
     border: 1px solid #1d1d1d;
