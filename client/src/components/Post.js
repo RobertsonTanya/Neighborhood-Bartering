@@ -19,9 +19,6 @@ function Post(props) {
         <p>{item.sugItem}</p>
         <button className={styles.button}>Request Trade</button>
       </div>
-      <input type="checkbox" name="" id="alternate" />
-      <label htmlFor="alternate">Alternate Item</label>
-      <input className={styles.altInput} type="text" name="" id="" />
     </div>
   )
 }
