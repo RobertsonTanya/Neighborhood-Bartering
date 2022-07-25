@@ -12,7 +12,7 @@ const LoginReg = (props) => {
 
     return (
         <div className={`container ${styles.container}`}>
-            <Header user={user} setUser={setUser} showLoginBtn={true} />
+            <Header user={user} setUser={setUser} showLoginBtn={false} />
             {showLogin ?
                 <Login setShowLogin={setShowLogin} />
             : 

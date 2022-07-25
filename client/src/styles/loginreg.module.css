@@ -29,7 +29,9 @@
     background-color: #66e9a4;
     border: 1px solid #1d1d1d;
     border-radius: 5px;
+    height: 30px;
     margin: 10px 0;
+    padding: 0 10px;
 }
 
 .loginToggle {
