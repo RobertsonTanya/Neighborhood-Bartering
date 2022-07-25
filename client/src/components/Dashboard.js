@@ -8,7 +8,8 @@ import styles from "../styles/dashboard.module.css";
 
 
 
-function Dashboard() {
+function Dashboard(props) {
+  const { user, setUser } = props;
   const [items, setItems] = useState([{}]);
 
   useEffect(()=>{
@@ -25,7 +26,7 @@ function Dashboard() {
 
   return (
     <div className={`container ${styles.container}`}>
-      <Header showLoginBtn={true}/>
+      <Header user={user} setUser={setUser} showLoginBtn={true} />
       <div className={styles.dashboard}>
         {items ?
           items.map((item, index)=>{

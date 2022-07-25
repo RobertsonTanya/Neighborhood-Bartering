@@ -1,12 +1,15 @@
-import React from 'react'
-import TradeRequest from './TradeRequest'
+import React from 'react';
+import TradeRequest from './TradeRequest';
 import styles from '../styles/requestpage.module.css';
-import logo from '../images/logo.png'
 
-function Requests() {
+
+function Requests(props) {
+  const { user, setUser } = props;
+
+
   return (
     <div className='container'>
-      <img className={styles.logo} src={logo} alt="logo" />
+      <Header user={user} setUser={setUser} showLoginBtn={true} />
     <div className={styles.requestpage}>
       <TradeRequest /><TradeRequest /><TradeRequest />
       <TradeRequest /><TradeRequest /><TradeRequest />
@@ -15,4 +18,4 @@ function Requests() {
   )
 }
 
-export default Requests
+export default Requests;

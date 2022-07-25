@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import styles from "../styles/createItemForm.module.css";
 
-const CreateItemForm = () => {
+const CreateItemForm = (props) => {
+  const { user, setUser } = props;
   const [itemName, setItemName] = useState("");
   const [description, setDescription] = useState("");
   const [sugItem, setSugItem] = useState("");
@@ -37,9 +38,9 @@ const CreateItemForm = () => {
           altTrade,
           altMessage,
         },
-        {
-          withCredentials: true,
-        }
+        // {
+        //   withCredentials: true,
+        // }
       )
       .then((res) => {
         console.log(res);
@@ -54,11 +55,10 @@ const CreateItemForm = () => {
   };
 
   return (
-    <div className={`container ${styles.container}`}>
-      <Header login={false} />
-      <h1 className={styles.h1}>Create an Item for Trade</h1>
-      <div className={styles.formContainer}>
-        <form onSubmit={onSubmitHandler} className={styles.form}>
+    <div>
+      <Header user={user} setUser={setUser} showLoginBtn={false} />
+      <div>
+        <form onSubmit={onSubmitHandler}>
           <label>Item Name: </label>
           <input
             className={styles.input}
