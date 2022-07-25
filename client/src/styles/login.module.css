@@ -14,3 +14,7 @@ form {
     flex-direction: column;
     max-width: 250px;
 }
+
+button {
+    margin: 10px 0;
+}

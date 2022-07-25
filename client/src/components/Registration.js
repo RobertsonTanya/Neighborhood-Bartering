@@ -52,7 +52,7 @@ const Registration = (props) => {
     return (
         <div>
             <h1>Register</h1>
-            {confirmReg ? <h4 className={styles.confirmReg}>{confirmReg}</h4> : null}
+            {confirmReg ? <h4 className="success">{confirmReg}</h4> : null}
             <form onSubmit={register}>
                 <div className={styles.inputContainer}>
                     <label>Username</label>
@@ -90,6 +90,7 @@ const Registration = (props) => {
                     ) : null}
                     <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={(e) => handleChange(e)} />
                 </div>
+                <button type="submit">Register Me</button>
             </form>
         </div>
     )

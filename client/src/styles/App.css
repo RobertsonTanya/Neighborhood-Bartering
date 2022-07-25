@@ -11,12 +11,13 @@
 }
 
 .success {
-  background-color: #9ffbcd;
-  border-radius: 2px;
+  color: darkgreen;
   font-weight: 600;
+  text-align: center;
 }
 
 .error {
   color: darkred;
   font-weight: 600;
+  text-align: center;
 }
