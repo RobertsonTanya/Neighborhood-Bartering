@@ -6,12 +6,13 @@ import Header from './Header';
 
 import styles from "../styles/loginreg.module.css";
 
-const LoginReg = () => {
+const LoginReg = (props) => {
+    const { user, sdetUser } = props;
     const [showLogin, setShowLogin] = useState(false);
 
     return (
         <div className={`container ${styles.container}`}>
-            <Header showLoginBtn={true} />
+            <Header user={user} setUser={setUser} showLoginBtn={true} />
             {showLogin ?
                 <Login setShowLogin={setShowLogin} />
             : 

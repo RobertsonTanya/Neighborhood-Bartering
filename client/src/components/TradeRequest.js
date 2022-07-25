@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+
 import styles from '../styles/traderequests.module.css';
 
-function TradeRequest() {
+function TradeRequest(props) {
+  const { user, setUser } = props;
+
+
   return (
     <div>
+      <Header user={user} setUser={setUser} showLoginBtn={true} />
       <div className={styles.request}>
       <div className={styles.box}>
         <h2>Item Name</h2>
