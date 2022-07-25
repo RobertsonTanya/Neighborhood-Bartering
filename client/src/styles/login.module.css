@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+}
+
+form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer {
+    align-items: center;    
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+}
+
+button {
+    margin: 10px 0;
+}

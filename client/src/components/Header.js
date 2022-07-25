@@ -15,7 +15,7 @@ const Header = (props) => {
           </Link>
           {login ? (
             <button className={styles.dashboardbtn}>
-              <Link to="/register">Sign Up | Login</Link>
+              <Link to="/loginreg">Sign Up | Login</Link>
             </button>
           ) : null}
         </div>
