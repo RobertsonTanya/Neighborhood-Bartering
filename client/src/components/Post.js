@@ -10,7 +10,9 @@ function Post(props) {
       <h2>{item.itemName}</h2>
       <p className={styles.dateTime}>{item.createdAt}</p>
       <div className={styles.split}>
-        <img className={styles.img} src={item.imgUrl} alt={item.name} />
+        <span className={styles.imgContainer}>
+          <img className={styles.img} src={item.imgUrl} alt={item.name} />
+        </span>
         <p>{item.description}</p>
       </div>
       <div className={styles.split}>
