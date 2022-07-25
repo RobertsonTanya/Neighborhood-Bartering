@@ -36,9 +36,9 @@ const Login = () => {
 
     return (
         <div>
-            <h1>Login</h1>
+            <h1 className={styles.heading}>Log In</h1>
             {errorMessage ? <p className="error">{errorMessage}</p> : null}
-            <form onSubmit={login}>
+            <form className={styles.form} onSubmit={login}>
                 <div className={styles.inputContainer}>
                     <label>Email</label>
                     <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -47,7 +47,7 @@ const Login = () => {
                     <label>Password</label>
                     <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button type="submit">Log In</button>
+                <button className={styles.submitBtn} type="submit">Log In</button>
             </form>
         </div>
     )
