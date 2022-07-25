@@ -7,7 +7,7 @@ function Dashboard() {
 
   return (
     <div className={`container ${styles.container}`}>
-      <Header login={true}/>
+      <Header showLoginBtn={true}/>
       <div className={styles.dashboard}>
         <Post /><Post /><Post />
         <Post /><Post /><Post />

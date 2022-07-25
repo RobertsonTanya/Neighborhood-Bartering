@@ -8,7 +8,7 @@ import logo from "../images/logo.png";
 
 
 const Header = (props) => {
-  const { login } = props;
+  const { showLoginBtn } = props;
 
   const [user, setUser] = useState({});
 
@@ -45,14 +45,14 @@ const Header = (props) => {
           <Link to="/">
             <img className={styles.logo} src={logo} alt="logo" />
           </Link>
-          {login ? (
+          {showLoginBtn ? (
             <button className={`${styles.large} ${styles.loginBtn}`}>
               <Link to="/loginreg">Sign Up | Login</Link>
             </button>
           ) : null}
         </div>
         <div className={styles.navRight}>
-        {login ? (
+        {showLoginBtn ? (
             <button className={`${styles.small} ${styles.loginBtn}`}>
               <Link to="/loginreg">Sign Up | Login</Link>
             </button> 

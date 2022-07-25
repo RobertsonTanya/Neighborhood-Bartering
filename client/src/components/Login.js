@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-import styles from "../styles/login.module.css";
+import styles from "../styles/loginreg.module.css";
 
-const Login = () => {
+const Login = (props) => {
+    const { setShowLogin } = props;
     const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
@@ -37,8 +38,10 @@ const Login = () => {
     return (
         <div>
             <h1 className={styles.heading}>Log In</h1>
-            {errorMessage ? <p className="error">{errorMessage}</p> : null}
             <form className={styles.form} onSubmit={login}>
+                <p className={styles.loginToggle}>Don't have login credentials yet? </p>
+                <p className={styles.loginToggleLink} onClick={()=>setShowLogin(false)}>  Register here</p>
+                {errorMessage ? <p className="error">{errorMessage}</p> : null}
                 <div className={styles.inputContainer}>
                     <label>Email</label>
                     <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
