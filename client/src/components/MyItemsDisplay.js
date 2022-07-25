@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import styles from "../styles/myItemsDisplay.module.css";
+import styles from "../styles/myItemDisplay.module.css";
+import Header from "./Header";
 
 const MyItemsDisplay = () => {
   const [allMyItems, setAllMyItems] = useState([]);
@@ -9,7 +10,7 @@ const MyItemsDisplay = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/groceryswap/myitems")
+      .get("http://localhost:8000/api/groceryswap/allitems") //change to myitems later
       .then((res) => {
         console.log(res.data);
         setAllMyItems(res.data);
@@ -21,7 +22,7 @@ const MyItemsDisplay = () => {
 
   const deleteHandler = (idFromBelow) => {
     axios
-      .delete(`http://localhost:8000/api/bookshelf/${idFromBelow}`)
+      .delete(`http://localhost:8000/api/groceryswap/${idFromBelow}`)
       .then((res) => {
         console.log("deleted successfully");
         console.log(res);
@@ -35,32 +36,36 @@ const MyItemsDisplay = () => {
   };
 
   return (
-    <div>
-      <div className={`container ${styles.container}`}>
-        <div>Header Area</div>
-        <div className={styles.table-Container}>
-          <ul className="table-header">
-            <li>Items</li>
-            <li>Description</li>
-            <li>Date</li>
-            <li>Actions</li>
+    <div className={`container ${styles.container}`}>
+      {/* {if (createdBy) ?  } */}
+      <Header login={false} />
+      <div>
+        <div className={styles.tableContainer}>
+          <ul className={styles.tableHeader}>
+            <li className={styles.items}>Items</li>
+            <li className={styles.description}>Description</li>
+            <li className={styles.suggested}>Suggest Items</li>
+            <li className={styles.actions}>Actions</li>
           </ul>
         </div>
-        <div className="table-Container">
+        <div className={styles.tableContainer}>
           {allMyItems.map((items, index) => {
             {
               console.log(items);
             }
             return (
-              <ul key={index}>
-                <li>{items.itemName}</li>
-                <li>{items.description}</li>
-                <li>Date</li>
-                <li>
-                  <button>
+              <ul className={styles.tableRow} key={index}>
+                <li className={styles.items}>{items.itemName}</li>
+                <li className={styles.description}>{items.description}</li>
+                <li className={styles.suggested}>{items.sugItem}</li>
+                <li className={styles.actions}>
+                  <button className={styles.tablebtn}>
                     <Link to={`/UpdateItem/${items._id}`}> Update </Link>
                   </button>
-                  <button onClick={() => deleteHandler(items._id, index)}>
+                  <button
+                    className={styles.tablebtn}
+                    onClick={() => deleteHandler(items._id, index)}
+                  >
                     Delete
                   </button>
                 </li>
@@ -69,6 +74,7 @@ const MyItemsDisplay = () => {
           })}
         </div>
       </div>
+      {/* : message } */}
     </div>
   );
 };
