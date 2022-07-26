@@ -24,8 +24,6 @@ const CreateItemForm = (props) => {
       description,
       sugItem,
       imgUrl,
-      altTrade,
-      altMessage,
     });
     axios
       .post(
@@ -35,9 +33,7 @@ const CreateItemForm = (props) => {
           description,
           sugItem,
           imgUrl,
-          altTrade,
-          altMessage,
-        },
+        }
         // {
         //   withCredentials: true,
         // }
@@ -57,8 +53,8 @@ const CreateItemForm = (props) => {
   return (
     <div>
       <Header user={user} setUser={setUser} showLoginBtn={false} />
-      <div>
-        <form onSubmit={onSubmitHandler}>
+      <div className={styles.formContainer}>
+        <form onSubmit={onSubmitHandler} className={styles.form}>
           <label>Item Name: </label>
           <input
             className={styles.input}
