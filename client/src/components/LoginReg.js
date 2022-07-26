@@ -14,7 +14,7 @@ const LoginReg = (props) => {
         <div className={`container ${styles.container}`}>
             <Header user={user} setUser={setUser} showLoginBtn={false} />
             {showLogin ?
-                <Login setShowLogin={setShowLogin} />
+                <Login setShowLogin={setShowLogin} setUser={setUser} />
             : 
                 <Registration setShowLogin={setShowLogin} />
             }

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 import styles from "../styles/loginreg.module.css";
 
 const Login = (props) => {
-    const { setShowLogin } = props;
+    const { setShowLogin, setUser } = props;
     const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
@@ -27,6 +27,7 @@ const Login = (props) => {
         .then((res) => {
             console.log(res, "res");
             console.log(res.data, "is res data!");
+            setUser(res.data);
             navigate("/");
         })
         .catch((err) => {
