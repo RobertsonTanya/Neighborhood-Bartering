@@ -13,7 +13,13 @@ const Header = (props) => {
 
 
   const logout = () => {
-    axios.post("http://localhost:8000/api/users/logout")
+    axios.post("http://localhost:8000/api/users/logout",
+    // {
+    //   withCredentials: true,
+    //   credentials: 'include',
+    //   credentials: 'same-origin'
+    // }
+    )
     .then((res)=>{
       console.log(res.data);
       setUser({});

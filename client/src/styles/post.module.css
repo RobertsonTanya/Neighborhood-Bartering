@@ -3,15 +3,24 @@
 }
 
 .imgContainer {
+  border: 4px inset #ccc;
+  border-radius: 10px;
   margin-right: 10px;
   max-height: 100px;
   overflow: hidden;
   width: 100%;
 }
 
+.imgContainer:hover {
+  filter: brightness(1.25);
+  transition: transform 2s ease-in-out;
+  transform: scale(1.75);
+}
+
 .img {
   width: 200px;
 }
+
 
 .box {
   background-color:rgba(255,255,255,.85);
@@ -44,4 +53,13 @@
 .altInput {
   display: block;
   margin-left: 20px;
+}
+
+@media only screen and (max-width: 350px) {
+  .box {
+    width: 280px;
+  }
+  .imgContainer:hover {
+    transform: scale(1.75) translateX(30px);
+  }
 }
