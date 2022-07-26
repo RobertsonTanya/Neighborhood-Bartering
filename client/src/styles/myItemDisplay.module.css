@@ -67,6 +67,34 @@ li {
   border-bottom: 2px solid #1d1d1d;
 }
 
+.noItemsMsg {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #1d1d1d;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.noItemsBtn {
+  background-color: #66e9a4;
+  border: 1px solid #1d1d1d;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px #1d1d1d;
+  font-family: Tahoma;
+  height: 30px;
+  margin: 3px;
+  width: 130px;
+  cursor: pointer;
+}
+.noItemsBtn:hover {
+  background-color: #f1f086;
+}
+
+
 /* .itmes {
   width: 25%;
 }
