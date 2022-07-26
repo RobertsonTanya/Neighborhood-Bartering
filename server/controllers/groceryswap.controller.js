@@ -23,14 +23,14 @@ module.exports = {
   findAllItems: async (req, res) => {
     try {
       const allItems= await GrocerySwap.find()
-      .populate({
-        path: 'comments',
-        model:'Comment',
-        populate: {
-          path:'user',
-          model: 'User',
-        },
-      })
+      // .populate({
+      //   path: 'comments',
+      //   model:'Comment',
+      //   populate: {
+      //     path:'user',
+      //     model: 'User',
+      //   },
+      // })
       .exec();
       console.log(allItems);
       res.json(allItems);

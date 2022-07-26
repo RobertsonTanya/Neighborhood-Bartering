@@ -1,5 +1,8 @@
 import React from 'react';
 import TradeRequest from './TradeRequest';
+
+import Header from "./Header";
+
 import styles from '../styles/requestpage.module.css';
 
 
