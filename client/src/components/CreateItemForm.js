@@ -51,7 +51,7 @@ const CreateItemForm = (props) => {
   };
 
   return (
-    <div>
+    <div className={`container ${styles.container}`}>
       <Header user={user} setUser={setUser} showLoginBtn={false} />
       <div className={styles.formContainer}>
         <form onSubmit={onSubmitHandler} className={styles.form}>
