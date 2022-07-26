@@ -37,18 +37,18 @@ const Header = (props) => {
           <Link to="/">
             <img className={styles.logo} src={logo} alt="logo" />
           </Link>
-          {showLoginBtn ? (
+          {!showLoginBtn || Object.keys(user).length ? null : (
             <button className={`${styles.large} ${styles.loginBtn}`}>
               <Link to="/loginreg">Sign Up | Login</Link>
             </button>
-          ) : null}
+          )}
         </div>
         <div className={styles.navRight}>
-        {showLoginBtn ? (
+        {!showLoginBtn || Object.keys(user).length ? null : (
             <button className={`${styles.small} ${styles.loginBtn}`}>
               <Link to="/loginreg">Sign Up | Login</Link>
             </button> 
-          ) : null}
+          )}
           <span className={styles.mainNav}>
             <span className={styles.leftSpan}>
               <Link to="/">Dashboard</Link> |

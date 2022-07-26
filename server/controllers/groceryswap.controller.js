@@ -6,9 +6,9 @@ module.exports = {
   createNewItem: async (req, res) => {
     const {body}= req;
     let newGroceryObject = new GrocerySwap(body);
-    newGroceryObject.createdBy = req.decodedJWT.payload.id;
     const decodedJWT = jwt.decode(req.cookies.usertoken, {
       complete: true})
+    newGroceryObject.createdBy = decodedJWT.payload.id;
     try{
       newGroceryObject= await newGroceryObject.save();
       res.json(newGroceryObject);

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import styles from "../styles/myItemDisplay.module.css";
+
 import Header from "./Header";
+
+import styles from "../styles/myItemDisplay.module.css";
 
 const MyItemsDisplay = (props) => {
   const { user, setUser } = props;
@@ -42,7 +44,7 @@ const MyItemsDisplay = (props) => {
     <div className={`container ${styles.container}`}>
       {/* {if (createdBy) ?  } */}
       <Header user={user} setUser={setUser} showLoginBtn={false} />
-      <div>
+      <div className={styles.bothTablesContainer}>
         <div className={styles.tableContainer}>
           <ul className={styles.tableHeader}>
             <li className={styles.items}>Items</li>
