@@ -15,6 +15,7 @@ function App() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
+    if (user == null) {
     axios
       .get("http://localhost:8000/api/users", {
         withCredentials: true,
@@ -25,7 +26,7 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-      });
+      }); }
   }, []);
 
   return (
@@ -50,7 +51,7 @@ function App() {
             element={<CreateItemForm user={user} setUser={setUser} />}
           />
           <Route
-            path="/myitems/:username"
+            path="/myItems/:userLoggedIn"
             element={<MyItemsDisplay user={user} setUser={setUser} />}
           />
           <Route

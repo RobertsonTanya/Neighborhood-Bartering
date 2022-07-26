@@ -57,7 +57,7 @@ const Header = (props) => {
             {Object.keys(user).length ?
             <span className={styles.rightSpan}>
               <span> | </span>
-              <Link to={`/myitems/${user.username}`}>My Items</Link> | 
+              <Link to={`/myItems/${user.userLoggedIn}`}>My Items</Link> | 
               {/* ^^I will make sure this has the proper authentication on it */}
               <Link to="/" onClick={logout}>Log Out</Link>
             </span> : null}
