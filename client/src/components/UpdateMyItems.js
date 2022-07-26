@@ -14,10 +14,11 @@ const UpdateMyItems = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("use effct is running");
     axios
       .get(`http://localhost:8000/api/groceryswap/${id}`)
       .then((res) => {
-        console.log(res.data);
+        console.log("=====", res.data);
         setItemName(res.data.itemName);
         setDescription(res.data.description);
         setSugItem(res.data.sugItem);
