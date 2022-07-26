@@ -14,11 +14,10 @@ const Header = (props) => {
 
   const logout = () => {
     axios.post("http://localhost:8000/api/users/logout",
-    // {
-    //   withCredentials: true,
-    //   credentials: 'include',
-    //   credentials: 'same-origin'
-    // }
+    {},
+    {
+      withCredentials: true
+    }
     )
     .then((res)=>{
       console.log(res.data);

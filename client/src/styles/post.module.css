@@ -43,6 +43,11 @@
   text-align: right;
 }
 
+.split:last-of-type:before {
+  content: 'Trading for: ';
+  
+}
+
 .button {
   background-color: #66e9a4;
   border: 1px solid #1d1d1d;
