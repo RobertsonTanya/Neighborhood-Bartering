@@ -12,10 +12,14 @@ const MyItemsDisplay = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("users?", user.userLoggedIn);
     axios
-      .get(`http://localhost:8000/api/groceryswap/myItems/${user.username}`, {
-        withCredentials: true,
-      }) 
+      .get(
+        `http://localhost:8000/api/groceryswap/myItems/${user.userLoggedIn}`,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         console.log(res.data);
         setAllMyItems(res.data);
@@ -35,15 +39,17 @@ const MyItemsDisplay = (props) => {
           return items._id !== idFromBelow;
         });
         setAllMyItems(filteredItems);
-        navigate(`/myitems/${user.username}`);
+        navigate(`/myitems/${user.userLoggedIn}`);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err)
+      });
   };
 
   return (
     <div className={`container ${styles.container}`}>
-      {/* {if (createdBy) ?  } */}
       <Header user={user} setUser={setUser} showLoginBtn={false} />
+      { allMyItems.length >= 1 ?  
       <div className={styles.bothTablesContainer}>
         <div className={styles.tableContainer}>
           <ul className={styles.tableHeader}>
@@ -79,7 +85,13 @@ const MyItemsDisplay = (props) => {
           })}
         </div>
       </div>
-      {/* : message } */}
+      : 
+      <div>
+        <h1>No Items to Display</h1>
+        <button>
+          <Link to="/create">Create New Item</Link>
+        </button>
+      </div> }
     </div>
   );
 };
