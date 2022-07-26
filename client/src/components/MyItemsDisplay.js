@@ -31,7 +31,7 @@ const MyItemsDisplay = (props) => {
           return items._id !== idFromBelow;
         });
         setAllMyItems(filteredItems);
-        navigate("/myitems");
+        navigate(`/myitems/${user.username}`);
       })
       .catch((err) => console.log(err));
   };
@@ -61,7 +61,7 @@ const MyItemsDisplay = (props) => {
                 <li className={styles.suggested}>{items.sugItem}</li>
                 <li className={styles.actions}>
                   <button className={styles.tablebtn}>
-                    <Link to={`/UpdateItem/${items._id}`}> Update </Link>
+                    <Link to={`/update/${items._id}`}> Update </Link>
                   </button>
                   <button
                     className={styles.tablebtn}

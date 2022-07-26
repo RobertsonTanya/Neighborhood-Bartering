@@ -1,6 +1,13 @@
+.container {
+  min-height: 100vh;
+}
+
 .tableContainer {
-  margin: 20px;
+  margin: 20px 20px 0;
   padding: 0px;
+}
+.tableContainer:last-of-type {
+  margin: 5px 20px 20px;
 }
 
 .tableHeader,
