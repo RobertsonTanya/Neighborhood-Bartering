@@ -1,6 +1,9 @@
+.container {
+  min-height: 100vh;
+}
+
 .dashboard {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  min-height: 100vh;
 }

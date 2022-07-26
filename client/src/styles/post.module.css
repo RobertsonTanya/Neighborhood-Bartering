@@ -3,27 +3,56 @@
 }
 
 .imgContainer {
+  border: 4px inset #ccc;
+  border-radius: 10px;
+  margin-right: 10px;
   max-height: 100px;
   overflow: hidden;
+  width: 100%;
+}
+
+.imgContainer:hover {
+  filter: brightness(1.25);
+  transition: transform 2s ease-in-out;
+  transform: scale(1.75);
 }
 
 .img {
-  margin-right: 10px;
   width: 200px;
 }
 
+
 .box {
-  max-width: 400px;
+  background-color:rgba(255,255,255,.85);
   border: 2px solid #333;
   border-radius: 10px;
-  padding: 10px;
   margin: 10px;
-  background-color:rgba(255,255,255,.85);
+  padding: 10px;
+  width: 300px;
 }
 
 .split {
+  align-items: center;
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+
+.split:first-of-type {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: right;
+}
+
+.split:last-of-type {
+  margin-top: 10px;
+}
+
+.split:last-of-type:before {
+  content: 'Trading for: ';
+  font-size: 0.7em;
+  top: 3px;
+  position: absolute;
 }
 
 .button {
@@ -36,4 +65,13 @@
 .altInput {
   display: block;
   margin-left: 20px;
+}
+
+@media only screen and (max-width: 350px) {
+  .box {
+    width: 280px;
+  }
+  .imgContainer:hover {
+    transform: scale(1.75) translateX(30px);
+  }
 }

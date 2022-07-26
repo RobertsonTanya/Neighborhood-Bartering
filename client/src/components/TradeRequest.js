@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Header from "./Header";
+
 import styles from '../styles/traderequests.module.css';
 
 function TradeRequest(props) {
