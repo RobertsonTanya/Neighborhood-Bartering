@@ -1,21 +1,23 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+
 import Header from "./Header";
+
 import styles from "../styles/createItemForm.module.css";
+
 
 const CreateItemForm = (props) => {
   const { user, setUser } = props;
+
   const [itemName, setItemName] = useState("");
   const [description, setDescription] = useState("");
   const [sugItem, setSugItem] = useState("");
   const [imgUrl, setImgUrl] = useState("");
-  const [altTrade, setAltTrade] = useState("");
-  const [altMessage, setAltMessage] = useState("");
-  // const [createdBy, setCreatedBy] = useState("");
-  // const [date, setDate] = useState(""); >> update model with "date: type" with date validators
   const [errors, setErrors] = useState({});
+
   const navigate = useNavigate();
+
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -45,10 +47,11 @@ const CreateItemForm = (props) => {
       })
       .catch((err) => {
         console.log(err);
-        console.log(err.response.data.error.errors);
-        setErrors(err.response.data.error.errors);
+        console.log(err.response.data.errors);
+        setErrors(err.response.data.errors);
       });
   };
+  
 
   return (
     <div className={`container ${styles.container}`}>
@@ -64,7 +67,8 @@ const CreateItemForm = (props) => {
             value={itemName}
             onChange={(e) => setItemName(e.target.value)}
           />
-          {/* {errors.itemName ? <p>{errors.itemName.message}</p> : null} */}
+          {errors.itemName ? <p className={`error ${styles.errors}`}>{errors.itemName.message}</p> : null}
+
 
           <label>Short Description: </label>
           <textarea
@@ -74,7 +78,9 @@ const CreateItemForm = (props) => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          {/* {errors.description ? <p>{errors.description.message}</p> : null} */}
+          {errors.description ? <p className={`error ${styles.errors}`}>{errors.description.message}</p> : null}
+
+
           <label>Suggested Item: </label>
           <input
             className={styles.input}
@@ -83,7 +89,9 @@ const CreateItemForm = (props) => {
             value={sugItem}
             onChange={(e) => setSugItem(e.target.value)}
           />
-          {/* {errors.sugItem ? <p>{errors.sugItem.message}</p> : null}  */}
+          {errors.sugItem ? <p className={`error ${styles.errors}`}>{errors.sugItem.message}</p> : null} 
+
+
           <label>Image Url: </label>
           <input
             className={styles.input}
@@ -92,7 +100,9 @@ const CreateItemForm = (props) => {
             value={imgUrl}
             onChange={(e) => setImgUrl(e.target.value)}
           />
-          {/* {errors.imgUrl ? <p>{errors.imgUrl.message}</p> : null} */}
+          {errors.imgUrl ? <p className={`error ${styles.errors}`}>{errors.imgUrl.message}</p> : null}
+
+
           <div className={styles.addBtnContainer}>
             <input
               className={styles.addItemBtn}

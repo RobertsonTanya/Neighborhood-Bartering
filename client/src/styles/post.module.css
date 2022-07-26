@@ -1,5 +1,9 @@
-.dateTime{
+.dateUser {
   text-align: right;
+}
+
+.dateUser span {
+  font-size: 0.7em;
 }
 
 .imgContainer {

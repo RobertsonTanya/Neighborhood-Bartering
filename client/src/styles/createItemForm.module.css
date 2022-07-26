@@ -66,3 +66,7 @@ label {
   background-color: #f1f086;
   transform: translateY(4px);
 }
+
+.errors {
+  margin-top: -5px;
+}

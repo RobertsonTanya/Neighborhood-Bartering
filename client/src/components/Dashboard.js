@@ -31,7 +31,7 @@ function Dashboard(props) {
         {items ?
           items.map((item, index)=>{
             return (
-              <Post key={index} item={item} />
+              <Post key={index} item={item} user={user} />
             )
           })
         : null}
