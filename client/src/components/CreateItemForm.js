@@ -33,10 +33,10 @@ const CreateItemForm = (props) => {
           description,
           sugItem,
           imgUrl,
+        },
+        {
+          withCredentials: true,
         }
-        // {
-        //   withCredentials: true,
-        // }
       )
       .then((res) => {
         console.log(res);

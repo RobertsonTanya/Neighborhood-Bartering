@@ -39,7 +39,7 @@ const UpdateMyItems = (props) => {
       .then((res) => {
         console.log(res);
         console.log(res.data);
-        navigate("/myitems");
+        navigate(`/myitems/${user.username}`);
       })
       .catch((err) => {
         console.log(err);

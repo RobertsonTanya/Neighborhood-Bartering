@@ -31,7 +31,7 @@ const MyItemsDisplay = (props) => {
           return items._id !== idFromBelow;
         });
         setAllMyItems(filteredItems);
-        navigate("/myitems");
+        navigate(`/myitems/${user.username}`);
       })
       .catch((err) => console.log(err));
   };
