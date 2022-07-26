@@ -11,7 +11,9 @@ const MyItemsDisplay = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/groceryswap/allitems") //change to myitems later
+      .get(`http://localhost:8000/api/groceryswap/myItems/${user.username}`, {
+        withCredentials: true,
+      }) 
       .then((res) => {
         console.log(res.data);
         setAllMyItems(res.data);
