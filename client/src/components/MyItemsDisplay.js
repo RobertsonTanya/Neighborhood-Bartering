@@ -40,7 +40,7 @@ const MyItemsDisplay = (props) => {
     <div className={`container ${styles.container}`}>
       {/* {if (createdBy) ?  } */}
       <Header user={user} setUser={setUser} showLoginBtn={false} />
-      <div>
+      <div className={styles.bothTablesContainer}>
         <div className={styles.tableContainer}>
           <ul className={styles.tableHeader}>
             <li className={styles.items}>Items</li>

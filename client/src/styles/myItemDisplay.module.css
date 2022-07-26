@@ -2,6 +2,13 @@
   min-height: 100vh;
 }
 
+.bothTablesContainer {
+  background-color: rgba(255,255,255,0.85);
+  border: 1px solid #1d1d1d;
+  border-radius: 10px;
+  padding: 20px 0;
+}
+
 .tableContainer {
   margin: 20px 20px 0;
   padding: 0px;
@@ -23,14 +30,14 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: #1d1d1d;
   cursor: pointer;
   padding: 5px;
 }
 
 .tablebtn {
-  background-color: aliceblue;
-  border: 1px solid black;
+  background-color: #66e9a4;
+  border: 1px solid #1d1d1d;
   border-radius: 5px;
   font-family: Tahoma;
   height: 30px;
@@ -38,6 +45,11 @@ a {
   width: 80px;
   cursor: pointer;
 }
+
+.tablebtn:last-of-type {
+  background-color: #f5a9b4;
+}
+
 
 ul {
   max-width: 1200px;
@@ -48,7 +60,7 @@ ul {
 li {
   width: 25%;
   padding-right: 10px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #1d1d1d;
 }
 
 /* .itmes {
