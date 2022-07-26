@@ -74,7 +74,7 @@ const CreateItemForm = (props) => {
             onChange={(e) => setDescription(e.target.value)}
           />
           {/* {errors.description ? <p>{errors.description.message}</p> : null} */}
-          <label>Suggest Item: </label>
+          <label>Suggested Item: </label>
           <input
             className={styles.input}
             name="sugItem"
@@ -83,7 +83,7 @@ const CreateItemForm = (props) => {
             onChange={(e) => setSugItem(e.target.value)}
           />
           {/* {errors.sugItem ? <p>{errors.sugItem.message}</p> : null}  */}
-          <label>Img Url: </label>
+          <label>Image Url: </label>
           <input
             className={styles.input}
             name="imgUrl"
