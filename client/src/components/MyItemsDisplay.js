@@ -86,9 +86,9 @@ const MyItemsDisplay = (props) => {
         </div>
       </div>
       : 
-      <div>
-        <h1>No Items to Display</h1>
-        <button>
+      <div className={styles.noItemsMsg}>
+        <h3>No Items to Display</h3>
+        <button className={styles.noItemsBtn}>
           <Link to="/create">Create New Item</Link>
         </button>
       </div> }

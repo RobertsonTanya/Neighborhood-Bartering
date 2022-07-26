@@ -58,6 +58,7 @@ const CreateItemForm = (props) => {
       <Header user={user} setUser={setUser} showLoginBtn={false} />
       <div className={styles.formContainer}>
         <form onSubmit={onSubmitHandler} className={styles.form}>
+          <h1>Create Item</h1>
           <label>Item Name: </label>
           <input
             className={styles.input}
