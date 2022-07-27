@@ -8,7 +8,7 @@ const CommentSchema = mongoose.Schema(
     },
     groceryswap_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Post",
+      ref: "GrocerySwap",
     },
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
