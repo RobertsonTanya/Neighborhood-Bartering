@@ -40,7 +40,6 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  position: relative;
 }
 
 .split:first-of-type {
@@ -53,10 +52,15 @@
   margin-top: 10px;
 }
 
-.split:last-of-type:before {
+.sugItem {
+  margin-top: 30px;
+  position: relative;
+}
+
+.suggested:before {
   content: 'Trading for: ';
   font-size: 0.7em;
-  top: 3px;
+  top: -13px;
   position: absolute;
 }
 
