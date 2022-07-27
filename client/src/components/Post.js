@@ -40,7 +40,9 @@ function Post(props) {
         </span>
         <p>{item.description}</p>
       </div>
-      <div className={styles.split}>
+      <div className={styles.sugItem}>
+        <div className={styles.suggested}>
+      </div>
         <p>{item.sugItem}</p>
         {/* <button className={styles.button}>Request Trade</button> */}
       </div>

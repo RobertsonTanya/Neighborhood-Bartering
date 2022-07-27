@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "../styles/header.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 import logo from "../images/logo.png";
 
+import styles from "../styles/header.module.css";
 
 
 const Header = (props) => {
@@ -37,25 +37,21 @@ const Header = (props) => {
           <Link to="/">
             <img className={styles.logo} src={logo} alt="logo" />
           </Link>
-          {!showLoginBtn || Object.keys(user).length ? null : (
-            <button className={`${styles.large} ${styles.loginBtn}`}>
-              <Link to="/loginreg">Sign Up | Login</Link>
-            </button>
-          )}
         </div>
         <div className={styles.navRight}>
-        {!showLoginBtn || Object.keys(user).length ? null : (
-            <button className={`${styles.small} ${styles.loginBtn}`}>
+          {!showLoginBtn || Object.keys(user).length ? null : (
+            <button className={`${styles.loginBtn}`}>
               <Link to="/loginreg">Sign Up | Login</Link>
             </button> 
           )}
           <span className={styles.mainNav}>
+            {(!showLoginBtn && Object.keys(user).length === 0) || (showLoginBtn && Object.keys(user).length) ? 
             <span className={styles.leftSpan}>
-              <Link to="/">Dashboard</Link> |
-              <Link to="/create">Create Item</Link>
-            </span>
+              <Link to="/">Dashboard</Link>
+            </span> : null }
             {Object.keys(user).length ?
-            <span className={styles.rightSpan}>
+            <span className={styles.rightSpan}> |
+              <Link to="/create">Create Item</Link>
               <span> | </span>
               <Link to={`/myItems/${user.userLoggedIn}`}>My Items</Link> | 
               {/* ^^I will make sure this has the proper authentication on it */}
