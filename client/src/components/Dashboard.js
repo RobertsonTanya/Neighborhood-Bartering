@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import Post from "./Post";
 import Header from "./Header";
@@ -27,17 +28,22 @@ function Dashboard(props) {
   return (
     <div className={`container ${styles.container}`}>
       <Header user={user} setUser={setUser} showLoginBtn={true} />
-      <div className={styles.dashboard}>
-        {items ?
-          items.map((item, index)=>{
-            return (
-              <Post key={index} item={item} user={user} />
-            )
-          })
-        : null}
-      </div>
+      {items.length >= 1 ? (
+        <div className={styles.dashboard}>
+          {items.map((item, index) => {
+            return <Post key={index} item={item} user={user} />;
+          })}
+        </div>
+      ) : (
+        <div className={styles.noItemsMsg}>
+          <h3>No Items Up for Trade</h3>
+          <button className={styles.noItemsBtn}>
+            <Link to="/create">Create New Item</Link>
+          </button>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
 export default Dashboard
