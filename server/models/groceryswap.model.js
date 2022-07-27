@@ -29,4 +29,6 @@ const GroceryswapSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-module.exports = mongoose.model("GrocerySwap", GroceryswapSchema);
+const GrocerySwap= mongoose.model("GrocerySwap", GroceryswapSchema)
+
+module.exports = GrocerySwap;

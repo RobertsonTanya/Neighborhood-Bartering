@@ -1,17 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import axios from 'axios'
 import styles from '../styles/post.module.css';
 
 
 function Post(props) {
-  const { item, user } = props;
+  const { item, user, setCommentSubmitDummy, commentSubmitDummy } = props;
   const date = item.createdAt ? item.createdAt.slice(0, 10) : null;
   const [commentText, setCommentText] = useState("");
-  const [commentSubmitDummy, setCommentSubmitDummy] = useState(false);
 
   const handleSubmitComment = async (e, postId) => {
-    // e.preventDefault();
-    console.log("jkljdfljasdlkfjasdklfjalskj");
+    e.preventDefault();
     const newComment = {
       text: commentText,
     };
@@ -32,7 +30,7 @@ function Post(props) {
   return (
     <div className={styles.box}>
       <h2>{item.itemName}</h2>
-      <p className={styles.dateUser}><span>Posted by: </span>{user.userLoggedIn}</p>
+      <p className={styles.dateUser}><span>Posted by: </span>{item.createdBy && item.createdBy.username}</p>
       <p className={styles.dateUser}><span>Posted: </span>{date}</p>
       <div className={styles.split}>
         <span className={styles.imgContainer}>
@@ -44,20 +42,20 @@ function Post(props) {
         <div className={styles.suggested}>
       </div>
         <p>{item.sugItem}</p>
-        {/* <button className={styles.button}>Request Trade</button> */}
       </div>
+      <div>
         <h4>Comments:</h4>
         {item.comments ?
           item.comments.map((comment, index) => {
-            console.log("Line 60",comment);
             return(
-            <div key={index}>
+              <div key={index}>
               <p>
-                {comment.user_id} commented{" "} 
+                {comment.user_id.username} commented{" "} 
                 {comment.text}
               </p>
-            </div>)
-          }):null}
+              </div>)
+            }):null}
+      </div>
         <form onSubmit={(e) => handleSubmitComment(e, item._id)}>
           <textarea
           placeholder="Comment to Start Trade"

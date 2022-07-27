@@ -12,9 +12,10 @@ import styles from "../styles/dashboard.module.css";
 function Dashboard(props) {
   const { user, setUser } = props;
   const [items, setItems] = useState([{}]);
+  const [commentSubmitDummy, setCommentSubmitDummy] = useState(false) ;
 
   useEffect(()=>{
-      axios.get("http://localhost:8000/api/GrocerySwap/allItems")
+      axios.get("http://localhost:8000/api/groceryswap/allitems")
       .then((res)=>{
         console.log(res.data);
         setItems(res.data);
@@ -31,7 +32,7 @@ function Dashboard(props) {
       {items.length >= 1 ? (
         <div className={styles.dashboard}>
           {items.map((item, index) => {
-            return <Post key={index} item={item} user={user} />;
+            return <Post key={index} item={item} user={user} commentSubmitDummy={commentSubmitDummy} setCommentSubmitDummy={setCommentSubmitDummy} />;
           })}
         </div>
       ) : (

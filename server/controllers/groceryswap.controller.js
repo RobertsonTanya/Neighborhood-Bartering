@@ -1,6 +1,7 @@
 const GrocerySwap = require("../models/groceryswap.model");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
+const { populate } = require("../models/user.model");
 
 module.exports = {
   createNewItem: async (req, res) => {
@@ -21,21 +22,25 @@ module.exports = {
     },
 
   findAllItems: async (req, res) => {
+    console.log("line 25******")
     try {
-      const allItems= await GrocerySwap.find()
-      // .populate({
-      //   path: 'comments',
-      //   model:'Comment',
-      //   populate: {
-      //     path:'user',
-      //     model: 'User',
-      //   },
-      // })
-      .exec();
+      const allItems= await GrocerySwap.find({})
+        .populate("createdBy")
+        .populate({
+          path: "comments",
+          model: "Comment",
+          populate: {
+            path: "user_id",
+            model: "User",
+          },
+        })
+        .exec();
       console.log(allItems);
       res.json(allItems);
     }catch (error) {
       console.log('err block');
+      console.log(error);
+      console.log(error.response);
       res.status(400).json(error);
     }
   },
