@@ -3,7 +3,7 @@ const { authenticate } = require("../middleware/jwt.config.js");
 
 module.exports = (app) => {
     app.post("/api/groceryswap/create", authenticate, groceryswapController.createNewItem);
-    app.get("/api/groceryswap/allItems", groceryswapController.findAllItems);
+    app.get("/api/groceryswap/allitems", groceryswapController.findAllItems);
     app.get("/api/groceryswap/:id", groceryswapController.getOneItem);
     app.get(
       "/api/groceryswap/myItems/:userLoggedIn",
