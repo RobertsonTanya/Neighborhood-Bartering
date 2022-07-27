@@ -25,27 +25,22 @@ a {
   align-items: center;
   display: flex;
   justify-content: flex-start;
-  flex: 1;
+  flex-basis: 25%;
 }
 .navRight {
   align-items: center;
   justify-content: flex-end;
   display: flex;
-  flex: 1;
   text-align: center;
+  flex-basis: 75%;
 }
-
-.small {
-  display: none;
-}
-
 
 .loginBtn {
   background-color: white;
   border: 1.5px solid #1d1d1d;
   border-radius: 10px;
   box-shadow: 0px 5px 10px #1d1d1d;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
   margin-left: 20px;
   width: 170px;
@@ -98,33 +93,7 @@ a {
     transform: translateY(0);
   }
 }
-@media only screen and (max-width: 775px){
-  .leftSpan, .rightSpan {
-    display: block;
-  }
-  .rightSpan span {
-    display: none;
-  }
-}
 
-@media only screen and (max-width: 635px){
-  .large {
-    display: none;
-  }
-  .small {
-    display: block;
-    margin-bottom: 10px;
-  }
-  .navRight {
-    flex-wrap: wrap;
-  }
-}
-
-@media only screen and (max-width: 440px){
-  .navigation {
-    flex-wrap: wrap;
-  }
-  .navLeft, .navRight {
-    justify-content: center;
-  }
+@media only screen and (max-width: 767px) {
+  
 }
