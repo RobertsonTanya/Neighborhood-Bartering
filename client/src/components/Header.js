@@ -37,31 +37,26 @@ const Header = (props) => {
           <Link to="/">
             <img className={styles.logo} src={logo} alt="logo" />
           </Link>
-          {!showLoginBtn || Object.keys(user).length ? null : (
-            <button className={`${styles.large} ${styles.loginBtn}`}>
-              <Link to="/loginreg">Sign Up | Login</Link>
-            </button>
-          )}
         </div>
         <div className={styles.navRight}>
         {!showLoginBtn || Object.keys(user).length ? null : (
-            <button className={`${styles.small} ${styles.loginBtn}`}>
+            <button className={`${styles.loginBtn}`}>
               <Link to="/loginreg">Sign Up | Login</Link>
             </button> 
           )}
+            {Object.keys(user).length ?
           <span className={styles.mainNav}>
             <span className={styles.leftSpan}>
               <Link to="/">Dashboard</Link> |
               <Link to="/create">Create Item</Link>
             </span>
-            {Object.keys(user).length ?
             <span className={styles.rightSpan}>
               <span> | </span>
               <Link to={`/myItems/${user.userLoggedIn}`}>My Items</Link> | 
               {/* ^^I will make sure this has the proper authentication on it */}
               <Link to="/" onClick={logout}>Log Out</Link>
-            </span> : null}
-          </span>
+            </span>
+          </span> : null}
         </div>
       </div>
     </div>
