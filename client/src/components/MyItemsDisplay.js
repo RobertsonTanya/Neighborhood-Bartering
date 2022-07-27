@@ -48,7 +48,7 @@ const MyItemsDisplay = (props) => {
 
   return (
     <div className={`container ${styles.container}`}>
-      <Header user={user} setUser={setUser} showLoginBtn={false} />
+      <Header user={user} setUser={setUser} showLoginBtn={true} />
       { allMyItems.length >= 1 ?  
       <div className={styles.bothTablesContainer}>
         <div className={styles.tableContainer}>
