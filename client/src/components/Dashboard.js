@@ -25,14 +25,23 @@ function Dashboard(props) {
       })
   }, []);
 
-
+  const updateState= (index, newComment)=>{
+    setItems(items.map((item, i)=>{
+      if( index===i){
+        item.comments.push(newComment)
+      
+      }
+      return item
+    }))
+  }
   return (
     <div className={`container ${styles.container}`}>
       <Header user={user} setUser={setUser} showLoginBtn={true} />
       {items.length >= 1 ? (
         <div className={styles.dashboard}>
           {items.map((item, index) => {
-            return <Post key={index} item={item} user={user} commentSubmitDummy={commentSubmitDummy} setCommentSubmitDummy={setCommentSubmitDummy} />;
+            return <Post key={index} item={item} user={user} commentSubmitDummy={commentSubmitDummy} setCommentSubmitDummy=
+            {setCommentSubmitDummy}  index={index} updateState={updateState} />;
           })}
         </div>
       ) : (
