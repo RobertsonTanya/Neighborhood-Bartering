@@ -72,7 +72,7 @@ const CreateItemForm = (props) => {
 
           <label>Short Description: </label>
           <textarea
-            className={styles.input}
+            className={`${styles.input} ${styles.textarea}`}
             name="description"
             type="text"
             value={description}

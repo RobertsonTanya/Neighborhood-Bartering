@@ -31,22 +31,21 @@ const Header = (props) => {
       });
   };
 
-  // const showNav = () => {
-  //   showMenu ? "" : styles.hidden 
-  // }
 
   return (
     <div className={styles.topNav}>
-      <div className={styles.navLeft}>
+      <div className="navLeft">
         <Link to="/">
           <img className={styles.logo} src={logo} alt="logo" />
         </Link>
       </div>
-      <div className={styles.navRight}>
-        <input id="menu-toggle" type="checkbox" />
-        <label class="menu-button-container" htmlFor="menu-toggle">
-          <div class="menu-button"></div>
-        </label>
+      <div className={(Object.keys(user).length) ? "navRight center" : "navRight"}>
+          <input id="menu-toggle" type="checkbox" />
+          {(Object.keys(user).length) ?
+            <label class="menu-button-container" htmlFor="menu-toggle">
+              <div class="menu-button"></div>
+            </label>
+          : null}
 
         {!showLoginBtn || Object.keys(user).length ? null : (
           <button className={`${styles.loginBtn}`}>
@@ -58,6 +57,9 @@ const Header = (props) => {
           {(!showLoginBtn && Object.keys(user).length === 0) ||
           (showLoginBtn && Object.keys(user).length) ? (
             <span className={styles.leftSpan}>
+              <li className="logoSmall">
+                <img className={styles.logo} src={logo} alt="logo" />
+              </li>
               <li>
                 <Link to="/">Dashboard</Link>
               </li>
