@@ -22,13 +22,13 @@
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  margin: 0px;
+  margin: 0;
 }
 .tableHeader {
   font-weight: bold;
 }
 
-a {
+.tablebtn a {
   text-decoration: none;
   color: #1d1d1d;
   cursor: pointer;
@@ -93,18 +93,3 @@ a {
 .noItemsBtn:hover {
   background-color: #f1f086;
 }
-
-
-/* .itmes {
-  width: 25%;
-}
-.description {
-  width: 25%;
-}
-.suggested {
-  width: 25%;
-}
-
-.actions {
-  width: 25%;
-} */
