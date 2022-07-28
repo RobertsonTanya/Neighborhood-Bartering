@@ -82,6 +82,17 @@
   margin-left: 20px;
 }
 
+.commentBox{
+  display:block;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #1d1d1d;
+}
+
+.commentForm.hidden{
+  display: none;
+}
+
 @media only screen and (max-width: 350px) {
   .box {
     width: 280px;
@@ -90,3 +101,4 @@
     transform: scale(1.75) translateX(30px);
   }
 }
+
