@@ -16,7 +16,16 @@ a {
   color: #1d1d1d;
 }
 
-.navigation {
+.rightSpan a {
+  padding: 0 10px;
+  border-left: 1px solid #1d1d1d;
+
+}
+.leftSpan a {
+  padding-right: 10px;
+}
+
+.topNav {
   display: flex;
   /* justify-content: space-between; */
   padding: 10px;
@@ -25,27 +34,22 @@ a {
   align-items: center;
   display: flex;
   justify-content: flex-start;
-  flex: 1;
+  flex-basis: 25%;
 }
 .navRight {
   align-items: center;
   justify-content: flex-end;
   display: flex;
-  flex: 1;
   text-align: center;
+  flex-basis: 75%;
 }
-
-.small {
-  display: none;
-}
-
 
 .loginBtn {
   background-color: white;
   border: 1.5px solid #1d1d1d;
   border-radius: 10px;
   box-shadow: 0px 5px 10px #1d1d1d;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
   margin-left: 20px;
   width: 170px;
@@ -98,33 +102,16 @@ a {
     transform: translateY(0);
   }
 }
-@media only screen and (max-width: 775px){
-  .leftSpan, .rightSpan {
-    display: block;
-  }
-  .rightSpan span {
-    display: none;
-  }
+
+.mainNav li {
+  list-style: none;
+  display: inline-block;
 }
 
-@media only screen and (max-width: 635px){
-  .large {
-    display: none;
-  }
-  .small {
-    display: block;
-    margin-bottom: 10px;
-  }
-  .navRight {
-    flex-wrap: wrap;
-  }
-}
 
-@media only screen and (max-width: 440px){
-  .navigation {
-    flex-wrap: wrap;
-  }
-  .navLeft, .navRight {
-    justify-content: center;
-  }
-}
+
+
+
+
+
+
