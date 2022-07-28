@@ -4,9 +4,10 @@ import styles from '../styles/post.module.css';
 
 
 function Post(props) {
-  const { item, user, setCommentSubmitDummy, commentSubmitDummy } = props;
+  const {index ,updateState, item, user, setCommentSubmitDummy, commentSubmitDummy } = props;
   const date = item.createdAt ? item.createdAt.slice(0, 10) : null;
   const [commentText, setCommentText] = useState("");
+  const [errors,setErrors]= useState({});
 
   const handleSubmitComment = async (e, postId) => {
     e.preventDefault();
@@ -21,11 +22,14 @@ function Post(props) {
       );
       console.log("line 35 in Feed.js", response);
       setCommentSubmitDummy(!commentSubmitDummy);
+      setCommentText("");
+      updateState(index, response.data.newComment);
+
     } catch (error) {
       console.log(error);
+      setErrors(error.response.data.errors.text)
     }
   };
-
 
   return (
     <div className={styles.box}>
@@ -56,8 +60,8 @@ function Post(props) {
               </div>)
             }):null}
       </div>
-        <form onSubmit={(e) => handleSubmitComment(e, item._id)}>
-          <textarea
+        <form className={`${(Object.keys(user).length) ? "" : styles.hidden} ${styles.commentForm}`} onSubmit={(e) => handleSubmitComment(e, item._id)}>
+          <textarea value={commentText} className= {styles.commentBox}
           placeholder="Comment to Start Trade"
             name=""
             id=""
@@ -65,6 +69,7 @@ function Post(props) {
             cols="15"
             rows="4"
           ></textarea>
+          {errors && errors.message ? <p>{errors.message}</p> : null}
           <button className={styles.button} type="submit">Comment</button>
         </form>
       <div>

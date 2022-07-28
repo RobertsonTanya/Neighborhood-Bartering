@@ -14,7 +14,9 @@ const addNewComment = async (req, res) => {
   console.log("after adding post and user id to comment doc", newComment);
 
   try {
-    newComment = await newComment.save();
+    newComment = await newComment.save()
+    newComment= await newComment.populate('user_id')
+      
     groceryswapQuery = await GrocerySwap.findByIdAndUpdate(
       { _id: params.groceryswapId },
       { $push: { comments: newComment._id } },
