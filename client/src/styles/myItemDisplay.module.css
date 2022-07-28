@@ -93,3 +93,32 @@
 .noItemsBtn:hover {
   background-color: #f1f086;
 }
+
+@media only screen and (max-width: 700px){
+  .tableHeader {
+    display: none;
+  }
+  .tableRow {
+    border-bottom: 2px solid #1d1d1d;
+    display: block;
+    padding: 10px;
+  }
+  .tableRow li {
+    border: none;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+  .tableRow li:before {
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  .items:before {
+    content: "Item for Trade: ";
+  }
+  .description:before {
+    content: "Description: ";
+  }
+  .sugItem:before {
+    content: "Suggested Items: ";
+  }
+}
