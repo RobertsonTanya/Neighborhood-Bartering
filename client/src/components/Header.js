@@ -34,12 +34,12 @@ const Header = (props) => {
 
   return (
     <div className={styles.topNav}>
-      <div className={styles.navLeft}>
+      <div className="navLeft">
         <Link to="/">
           <img className={styles.logo} src={logo} alt="logo" />
         </Link>
       </div>
-      <div className={styles.navRight}>
+      <div className={(Object.keys(user).length) ? "navRight center" : "navRight"}>
           <input id="menu-toggle" type="checkbox" />
           {(Object.keys(user).length) ?
             <label class="menu-button-container" for="menu-toggle">

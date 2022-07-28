@@ -8,8 +8,6 @@
   max-width: 185px;
 }
 
-/* Navigation */
-
 a {
   text-decoration: none;
   padding: 3px;
@@ -29,19 +27,6 @@ a {
   display: flex;
   /* justify-content: space-between; */
   padding: 10px;
-}
-.navLeft {
-  align-items: center;
-  display: flex;
-  justify-content: flex-start;
-  flex-basis: 25%;
-}
-.navRight {
-  align-items: center;
-  justify-content: flex-end;
-  display: flex;
-  text-align: center;
-  flex-basis: 75%;
 }
 
 .loginBtn {
@@ -108,10 +93,10 @@ a {
   display: inline-block;
 }
 
-
-
-
-
-
-
-
+@media only screen and (max-width: 450px){
+  .topNav {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

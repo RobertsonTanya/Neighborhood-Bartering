@@ -15,6 +15,10 @@
   overflow: hidden;
 }
 
+.menu li:hover {
+  font-weight: 600;
+}
+
 .menu-button-container {
   display: none;
   height: 100%;
@@ -28,6 +32,19 @@
 
 #menu-toggle {
   display: none;
+}
+.navLeft {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-basis: 25%;
+}
+.navRight {
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+  text-align: center;
+  flex-basis: 75%;
 }
 .navHidden {
   visibility: hidden;
@@ -70,7 +87,7 @@
 }
 
 @media (max-width: 700px) {
-  .logoSmall {
+  .logoSmall img {
     display: block;
   }
   .logoSmall img {
@@ -83,6 +100,7 @@
   }
   .menu {
     background-color: #fff;
+    border-bottom: 3px solid #66e9a4;
     position: absolute;
     top: 0;
     margin-top: 0px;
@@ -124,5 +142,14 @@
   }
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .navLeft,
+  .navRight.centered {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
   }
 }
