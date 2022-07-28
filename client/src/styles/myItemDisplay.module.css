@@ -6,6 +6,7 @@
   background-color: rgba(255,255,255,0.85);
   border: 1px solid #1d1d1d;
   border-radius: 10px;
+  margin-top: 20px;
   padding: 20px 0;
 }
 
@@ -22,13 +23,13 @@
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  margin: 0px;
+  margin: 0;
 }
 .tableHeader {
   font-weight: bold;
 }
 
-a {
+.tablebtn a {
   text-decoration: none;
   color: #1d1d1d;
   cursor: pointer;
@@ -94,17 +95,31 @@ a {
   background-color: #f1f086;
 }
 
-
-/* .itmes {
-  width: 25%;
+@media only screen and (max-width: 700px){
+  .tableHeader {
+    display: none;
+  }
+  .tableRow {
+    border-bottom: 2px solid #1d1d1d;
+    display: block;
+    padding: 10px;
+  }
+  .tableRow li {
+    border: none;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+  .tableRow li:before {
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  .items:before {
+    content: "Item for Trade: ";
+  }
+  .description:before {
+    content: "Description: ";
+  }
+  .sugItem:before {
+    content: "Suggested Items: ";
+  }
 }
-.description {
-  width: 25%;
-}
-.suggested {
-  width: 25%;
-}
-
-.actions {
-  width: 25%;
-} */
