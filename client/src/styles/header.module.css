@@ -16,6 +16,15 @@ a {
   color: #1d1d1d;
 }
 
+.rightSpan a {
+  padding: 0 10px;
+  border-left: 1px solid #1d1d1d;
+
+}
+.leftSpan a {
+  padding-right: 10px;
+}
+
 .navigation {
   display: flex;
   /* justify-content: space-between; */
@@ -94,6 +103,16 @@ a {
   }
 }
 
-@media only screen and (max-width: 767px) {
+.mainNav li {
+  list-style: none;
+  display: inline-block;
   
 }
+
+
+
+
+
+
+
+

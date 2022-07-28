@@ -55,13 +55,13 @@ a {
   background-color: #f1f086;
 }
 
-ul {
+.tableHeader, .tableRow {
   max-width: 1200px;
   padding-inline-start: 0;
 }
 
 
-li {
+.tableHeader li, .tableRow li {
   width: 25%;
   padding-right: 10px;
   border-bottom: 2px solid #1d1d1d;
