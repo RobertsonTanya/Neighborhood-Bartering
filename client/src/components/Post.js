@@ -55,13 +55,13 @@ function Post(props) {
               <div key={index}>
               <p>
                 {comment.user_id.username} commented{" "} 
-                {comment.text}
+                "{comment.text}"
               </p>
               </div>)
             }):null}
       </div>
         <form className={`${(Object.keys(user).length) ? "" : styles.hidden} ${styles.commentForm}`} onSubmit={(e) => handleSubmitComment(e, item._id)}>
-          <textarea value={commentText} className= {styles.commentBox}
+          <textarea value={commentText} className={styles.commentBox}
           placeholder="Comment to Start Trade"
             name=""
             id=""
