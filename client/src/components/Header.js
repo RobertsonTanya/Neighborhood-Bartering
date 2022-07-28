@@ -44,7 +44,7 @@ const Header = (props) => {
       </div>
       <div className={styles.navRight}>
         <input id="menu-toggle" type="checkbox" />
-        <label class="menu-button-container" for="menu-toggle">
+        <label class="menu-button-container" htmlFor="menu-toggle">
           <div class="menu-button"></div>
         </label>
 
