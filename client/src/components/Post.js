@@ -32,7 +32,7 @@ function Post(props) {
   };
 
   return (
-    <div className={styles.box}>
+    <div className={`${styles.box} ${(Object.keys(user).length) ? "" : "loggedOut"}`}>
       <h2>{item.itemName}</h2>
       <p className={styles.dateUser}><span>Posted by: </span>{item.createdBy && item.createdBy.username}</p>
       <p className={styles.dateUser}><span>Posted: </span>{date}</p>
