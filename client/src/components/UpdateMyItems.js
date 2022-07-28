@@ -57,7 +57,7 @@ const UpdateMyItems = (props) => {
   
   return (
     <div className={`container ${styles.container}`}>
-      <Header user={user} setUser={setUser} showLoginBtn={false} />
+      <Header user={user} setUser={setUser} showLoginBtn={true} />
       <div className={styles.formContainer}>
         <form onSubmit={updateItemHandler} className={styles.form}>
           <h1>Update Item</h1>
