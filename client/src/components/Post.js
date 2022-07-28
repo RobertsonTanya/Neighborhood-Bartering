@@ -47,33 +47,31 @@ function Post(props) {
       </div>
         <p>{item.sugItem}</p>
       </div>
-      <div>
+      <div className={styles.commentScroll}>
         <h4>Comments:</h4>
         {item.comments ?
           item.comments.map((comment, index) => {
             return(
               <div key={index}>
               <p>
-                {comment.user_id.username} commented{" "} 
-                "{comment.text}"
+                {comment.user_id.username} commented:{"  "} 
+                {comment.text}
               </p>
               </div>)
             }):null}
       </div>
-        <form className={`${(Object.keys(user).length) ? "" : styles.hidden} ${styles.commentForm}`} onSubmit={(e) => handleSubmitComment(e, item._id)}>
-          <textarea value={commentText} className={styles.commentBox}
-          placeholder="Comment to Start Trade"
-            name=""
-            id=""
-            onChange={(e) => setCommentText(e.target.value)}
-            cols="15"
-            rows="4"
-          ></textarea>
-          {errors && errors.message ? <p>{errors.message}</p> : null}
-          <button className={styles.button} type="submit">Comment</button>
-        </form>
-      <div>
-      </div>
+      <form className={`${(Object.keys(user).length) ? "" : styles.hidden} ${styles.commentForm}`} onSubmit={(e) => handleSubmitComment(e, item._id)}>
+        <textarea value={commentText} className= {styles.commentBox}
+        placeholder="Comment to Start Trade"
+          name=""
+          id=""
+          onChange={(e) => setCommentText(e.target.value)}
+          cols="15"
+          rows="4"
+        ></textarea>
+        {errors && errors.message ? <p>{errors.message}</p> : null}
+        <button className={styles.button} type="submit">Comment</button>
+      </form>
     </div>
   )
 }

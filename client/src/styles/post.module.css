@@ -34,6 +34,7 @@
   margin: 10px;
   padding: 10px;
   width: 300px;
+  height: 600px;
 }
 
 .split {
@@ -82,12 +83,24 @@
   margin-left: 20px;
 }
 
+.commentScroll{
+  overflow-y: auto;
+  overflow: scroll;
+  height: 150px;
+  font-size: .8em;
+}
+
+.commentScroll h4{
+  margin-top: 0;
+}
+
 .commentBox{
   display:block;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: 100%;
   margin-bottom: 10px;
   border: 1px solid #1d1d1d;
+  margin-top: 10px;
 }
 
 .commentForm.hidden{

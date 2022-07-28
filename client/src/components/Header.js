@@ -42,7 +42,7 @@ const Header = (props) => {
       <div className={(Object.keys(user).length) ? "navRight center" : "navRight"}>
           <input id="menu-toggle" type="checkbox" />
           {(Object.keys(user).length) ?
-            <label class="menu-button-container" for="menu-toggle">
+            <label class="menu-button-container" htmlFor="menu-toggle">
               <div class="menu-button"></div>
             </label>
           : null}
